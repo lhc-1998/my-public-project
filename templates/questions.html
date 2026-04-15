@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>题库管理 - 在线考试系统</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 在线考试系统</h1>
+            <nav>
+                <a href="/exam">开始考试</a>
+                <a href="/history">考试记录</a>
+                <a href="/questions">题库管理</a>
+                <a href="/admin" id="adminLink" style="display:none;">管理后台</a>
+                <button onclick="logout()" class="btn btn-outline">退出</button>
+            </nav>
+        </header>
+
+        <main>
+            <div class="page-header">
+                <h2>题库管理</h2>
+                <button onclick="showAddModal()" class="btn btn-primary" id="addBtn" style="display:none;">
+                    + 添加题目
+                </button>
+            </div>
+
+            <div class="filters-with-stats">
+                <div class="filters">
+                    <select id="filterCategory" onchange="goToPage(1)">
+                        <option value="">全部分类</option>
+                        <option value="MySQL">MySQL</option>
+                        <option value="Python">Python</option>
+                        <option value="Linux">Linux</option>
+                        <option value="FastAPI">FastAPI</option>
+                    </select>
+                    <select id="filterType" onchange="goToPage(1)">
+                        <option value="">全部题型</option>
+                        <option value="single">单选题</option>
+                        <option value="multiple">多选题</option>
+                        <option value="judge">判断题</option>
+                        <option value="short">简答题</option>
+                    </select>
+                </div>
+                <div class="filter-stats">
+                    <span id="statsInfo">共 0 道题目</span>
+                </div>
+            </div>
+
+            <div id="questionsList" class="questions-grid"></div>
+
+            <div class="pagination">
+                <button onclick="goToPage(1)" class="page-btn" id="firstBtn">首页</button>
+                <button onclick="goToPage(currentPage - 1)" class="page-btn" id="prevBtn">上一页</button>
+                <div class="page-numbers" id="pageNumbers"></div>
+                <button onclick="goToPage(currentPage + 1)" class="page-btn" id="nextBtn">下一页</button>
+                <button onclick="goToPage(totalPages)" class="page-btn" id="lastBtn">末页</button>
+                <div class="page-jump">
+                    跳至 <input type="number" id="jumpInput" min="1" onchange="jumpToPage()"> 页
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 添加/编辑题目 Modal -->
+    <div id="questionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">添加题目</h3>
+                <span onclick="closeModal()" class="close">&times;</span>
+            </div>
+            <form id="questionForm">
+                <input type="hidden" id="questionId">
+                <div class="form-group">
+                    <label>题目分类</label>
+                    <select id="category" required>
+                        <option value="MySQL">MySQL</option>
+                        <option value="Python">Python</option>
+                        <option value="Linux">Linux</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>题目类型</label>
+                    <select id="type" required onchange="toggleOptions()">
+                        <option value="single">单选题</option>
+                        <option value="multiple">多选题</option>
+                        <option value="judge">判断题</option>
+                        <option value="short">简答题</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>题目内容</label>
+                    <textarea id="content" required placeholder="请输入题目内容"></textarea>
+                </div>
+                <div class="form-group" id="optionsGroup">
+                    <label>选项（每行一个，如：A. 选项1）</label>
+                    <textarea id="options" placeholder="A. 选项1&#10;B. 选项2&#10;C. 选项3&#10;D. 选项4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>正确答案</label>
+                    <input type="text" id="answer" required placeholder="如：A 或 A,B,C">
+                </div>
+                <div class="form-group">
+                    <label>解析</label>
+                    <textarea id="analysis" placeholder="可选，题目解析"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>难度</label>
+                    <select id="difficulty">
+                        <option value="1">简单</option>
+                        <option value="2">中等</option>
+                        <option value="3">困难</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">保存</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let currentUser = null;
+        let currentPage = 1;
+        let totalPages = 1;
+        let totalQuestions = 0;
+        let pageSize = 20;
+
+        function getToken() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = '/login';
+                return null;
+            }
+            return token;
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = '/';
+        }
+
+        function checkRole() {
+            const userStr = localStorage.getItem('user');
+            if (userStr) {
+                currentUser = JSON.parse(userStr);
+                if (currentUser.role === 'teacher' || currentUser.role === 'admin') {
+                    document.getElementById('addBtn').style.display = 'block';
+                }
+                if (currentUser.role === 'admin') {
+                    document.getElementById('adminLink').style.display = '';
+                }
+            }
+        }
+
+        async function loadQuestions(page = 1) {
+            const token = getToken();
+            const category = document.getElementById('filterCategory').value;
+            const type = document.getElementById('filterType').value;
+            
+            pageSize = 20; // 默认每页20条
+            const skip = (page - 1) * pageSize;
+            let url = `/api/questions?skip=${skip}&limit=${pageSize}`;
+            if (category) url += `&category=${category}`;
+            if (type) url += `&type=${type}`;
+
+            try {
+                const res = await fetch(url, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (!res.ok) return;
+                const data = await res.json();
+                
+                currentPage = data.page;
+                totalPages = data.total_pages;
+                totalQuestions = data.total;
+                
+                renderQuestions(data.questions);
+                renderPagination();
+                updateStats();
+            } catch (e) {
+                console.error('加载失败', e);
+            }
+        }
+
+        function goToPage(page) {
+            if (page < 1) page = 1;
+            if (page > totalPages) page = totalPages;
+            loadQuestions(page);
+        }
+
+        function jumpToPage() {
+            const input = document.getElementById('jumpInput');
+            const page = parseInt(input.value);
+            if (page && page >= 1 && page <= totalPages) {
+                goToPage(page);
+            }
+            input.value = '';
+        }
+
+        function renderPagination() {
+            const pageNumbers = document.getElementById('pageNumbers');
+            let html = '';
+            
+            // 计算显示的页码范围
+            let startPage = Math.max(1, currentPage - 2);
+            let endPage = Math.min(totalPages, currentPage + 2);
+            
+            if (endPage - startPage < 4) {
+                if (startPage === 1) {
+                    endPage = Math.min(totalPages, 5);
+                } else {
+                    startPage = Math.max(1, totalPages - 4);
+                }
+            }
+
+            if (startPage > 1) {
+                html += `<button class="page-num" onclick="goToPage(1)">1</button>`;
+                if (startPage > 2) html += `<span class="page-ellipsis">...</span>`;
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                html += `<button class="page-num ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+            }
+
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) html += `<span class="page-ellipsis">...</span>`;
+                html += `<button class="page-num" onclick="goToPage(${totalPages})">${totalPages}</button>`;
+            }
+
+            pageNumbers.innerHTML = html;
+
+            // 更新按钮状态
+            document.getElementById('firstBtn').disabled = currentPage <= 1;
+            document.getElementById('prevBtn').disabled = currentPage <= 1;
+            document.getElementById('nextBtn').disabled = currentPage >= totalPages;
+            document.getElementById('lastBtn').disabled = currentPage >= totalPages;
+            document.getElementById('jumpInput').max = totalPages;
+        }
+
+        function updateStats() {
+            const category = document.getElementById('filterCategory').value;
+            const type = document.getElementById('filterType').value;
+            
+            let label = '';
+            if (category || type) {
+                label = `筛选结果：共 ${totalQuestions} 道`;
+            } else {
+                label = `全部题目：共 ${totalQuestions} 道`;
+            }
+            document.getElementById('statsInfo').textContent = label;
+        }
+
+        function renderQuestions(questions) {
+            const container = document.getElementById('questionsList');
+            const typeNames = { 'single': '单选', 'multiple': '多选', 'judge': '判断', 'short': '简答' };
+            const diffNames = { 1: '简单', 2: '中等', 3: '困难' };
+
+            container.innerHTML = questions.map(q => `
+                <div class="question-item">
+                    <div class="question-item-header">
+                        <span class="category-tag">${q.category}</span>
+                        <span class="type-tag">${typeNames[q.type]}</span>
+                        <span class="diff-tag">${diffNames[q.difficulty]}</span>
+                    </div>
+                    <div class="question-item-content">${q.content}</div>
+                    <div class="question-item-footer">
+                        <span class="answer">答案：${q.answer}</span>
+                        ${(currentUser?.role === 'teacher' || currentUser?.role === 'admin') ? `
+                            <div class="actions">
+                                <button onclick="editQuestion(${q.id})" class="btn btn-sm">编辑</button>
+                                <button onclick="deleteQuestion(${q.id})" class="btn btn-sm btn-danger">删除</button>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleOptions() {
+            const type = document.getElementById('type').value;
+            const optionsGroup = document.getElementById('optionsGroup');
+            optionsGroup.style.display = (type === 'single' || type === 'multiple') ? 'block' : 'none';
+        }
+
+        function showAddModal() {
+            document.getElementById('modalTitle').textContent = '添加题目';
+            document.getElementById('questionForm').reset();
+            document.getElementById('questionId').value = '';
+            toggleOptions();
+            document.getElementById('questionModal').style.display = 'flex';
+        }
+
+        async function editQuestion(id) {
+            const token = getToken();
+            const res = await fetch(`/api/questions/${id}`, {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+
+            if (!res.ok) return;
+            const q = await res.json();
+
+            document.getElementById('modalTitle').textContent = '编辑题目';
+            document.getElementById('questionId').value = q.id;
+            document.getElementById('category').value = q.category;
+            document.getElementById('type').value = q.type;
+            document.getElementById('content').value = q.content;
+            document.getElementById('answer').value = q.answer;
+            document.getElementById('analysis').value = q.analysis || '';
+            document.getElementById('difficulty').value = q.difficulty;
+
+            // 解析选项
+            if (q.options) {
+                try {
+                    const opts = JSON.parse(q.options);
+                    document.getElementById('options').value = opts.join('\n');
+                } catch (e) {
+                    document.getElementById('options').value = q.options;
+                }
+            }
+
+            toggleOptions();
+            document.getElementById('questionModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('questionModal').style.display = 'none';
+        }
+
+        document.getElementById('questionForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const token = getToken();
+            const id = document.getElementById('questionId').value;
+
+            let options = document.getElementById('options').value;
+            if (options) {
+                options = JSON.stringify(options.split('\n').map(o => o.trim()));
+            }
+
+            const data = {
+                category: document.getElementById('category').value,
+                type: document.getElementById('type').value,
+                content: document.getElementById('content').value,
+                answer: document.getElementById('answer').value,
+                analysis: document.getElementById('analysis').value,
+                difficulty: parseInt(document.getElementById('difficulty').value),
+                options: options
+            };
+
+            const url = id ? `/api/questions/${id}` : '/api/questions';
+            const method = id ? 'PUT' : 'POST';
+
+            try {
+                const res = await fetch(url, {
+                    method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (res.ok) {
+                    closeModal();
+                    loadQuestions();
+                } else {
+                    alert('保存失败');
+                }
+            } catch (e) {
+                alert('网络错误');
+            }
+        });
+
+        async function deleteQuestion(id) {
+            if (!confirm('确定要删除这道题目吗？')) return;
+            const token = getToken();
+
+            try {
+                const res = await fetch(`/api/questions/${id}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (res.ok) {
+                    loadQuestions();
+                }
+            } catch (e) {
+                alert('删除失败');
+            }
+        }
+
+        checkRole();
+        loadQuestions();
+    </script>
+</body>
+</html>

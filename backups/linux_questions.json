@@ -1,0 +1,362 @@
+[
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "哪个命令用于显示当前工作目录？",
+    "options": "[\"A. cd\", \"B. pwd\", \"C. dir\", \"D. cwd\"]",
+    "answer": "B",
+    "analysis": "pwd (print working directory) 显示当前目录",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "Linux中哪个命令用于创建目录？",
+    "options": "[\"A. mkdir\", \"B. makedir\", \"C. createdir\", \"D. mkfolder\"]",
+    "answer": "A",
+    "analysis": "mkdir用于创建目录",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "multiple",
+    "content": "以下哪些是Linux的权限？",
+    "options": "[\"A. read (r)\", \"B. write (w)\", \"C. execute (x)\", \"D. delete (d)\"]",
+    "answer": "A,B,C",
+    "analysis": "Linux权限包括r(读)、w(写)、x(执行)",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "judge",
+    "content": "在Linux中，ls -la命令可以显示隐藏文件。",
+    "options": null,
+    "answer": "TRUE",
+    "analysis": "-a选项显示所有文件",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "judge",
+    "content": "Linux是开源操作系统。",
+    "options": null,
+    "answer": "TRUE",
+    "analysis": "Linux遵循GPL许可证",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "short",
+    "content": "请写出递归复制目录的命令。",
+    "options": null,
+    "answer": "cp,-r,cp -r",
+    "analysis": "答案是 cp -r 源目录 目标目录",
+    "difficulty": 2
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "Shell脚本的文件后缀通常是？",
+    "options": "[\"A. .sh\", \"B. .bash\", \"C. .shell\", \"D. \\u65e0\\u8981\\u6c42\"]",
+    "answer": "A",
+    "analysis": "Shell脚本推荐使用.sh后缀，方便区分",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "给脚本添加可执行权限的命令是？",
+    "options": "[\"A. chmod +x\", \"B. chmod +r\", \"C. chmod +w\", \"D. chmod +s\"]",
+    "answer": "A",
+    "analysis": "chmod +x添加可执行权限，否则脚本无法运行",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "Shell变量的定义语法是？",
+    "options": "[\"A. \\u53d8\\u91cf\\u540d=\\u503c\\uff08\\u7b49\\u53f7\\u524d\\u540e\\u4e0d\\u80fd\\u6709\\u7a7a\\u683c\\uff09\", \"B. \\u53d8\\u91cf\\u540d = \\u503c\", \"C. $\\u53d8\\u91cf\\u540d=\\u503c\", \"D. let \\u53d8\\u91cf\\u540d=\\u503c\"]",
+    "answer": "A",
+    "analysis": "变量赋值时等号前后不能有空格，否则会报错",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "使用变量时需要在变量名前加什么符号？",
+    "options": "[\"A. $\", \"B. #\", \"C. @\", \"D. %\"]",
+    "answer": "A",
+    "analysis": "使用变量时需要加$符号，如$name或${name}",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "$0表示什么？",
+    "options": "[\"A. \\u5f53\\u524d\\u811a\\u672c\\u7684\\u6587\\u4ef6\\u540d\", \"B. \\u7b2c\\u4e00\\u4e2a\\u53c2\\u6570\", \"C. \\u53c2\\u6570\\u603b\\u6570\", \"D. \\u5f53\\u524d\\u8fdb\\u7a0bID\"]",
+    "answer": "A",
+    "analysis": "$0表示当前脚本的文件名",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "$1表示什么？",
+    "options": "[\"A. \\u7b2c\\u4e00\\u4e2a\\u53c2\\u6570\", \"B. \\u7b2c\\u4e8c\\u4e2a\\u53c2\\u6570\", \"C. \\u811a\\u672c\\u540d\", \"D. \\u53c2\\u6570\\u603b\\u6570\"]",
+    "answer": "A",
+    "analysis": "$1表示运行脚本时传入的第一个参数",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "$#表示什么？",
+    "options": "[\"A. \\u53c2\\u6570\\u603b\\u6570\", \"B. \\u7b2c\\u4e00\\u4e2a\\u53c2\\u6570\", \"C. \\u811a\\u672c\\u540d\", \"D. \\u6700\\u540e\\u4e00\\u4e2a\\u53c2\\u6570\"]",
+    "answer": "A",
+    "analysis": "$#表示运行脚本时传入的参数总数",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "echo命令的作用是？",
+    "options": "[\"A. \\u8f93\\u51fa\\u5185\\u5bb9\\u5230\\u7ec8\\u7aef\", \"B. \\u8bfb\\u53d6\\u7528\\u6237\\u8f93\\u5165\", \"C. \\u521b\\u5efa\\u6587\\u4ef6\", \"D. \\u5220\\u9664\\u6587\\u4ef6\"]",
+    "answer": "A",
+    "analysis": "echo是最常用的输出命令",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "read命令的作用是？",
+    "options": "[\"A. \\u63a5\\u6536\\u7528\\u6237\\u8f93\\u5165\", \"B. \\u8bfb\\u53d6\\u6587\\u4ef6\\u5185\\u5bb9\", \"C. \\u521b\\u5efa\\u6587\\u4ef6\", \"D. \\u8f93\\u51fa\\u5185\\u5bb9\"]",
+    "answer": "A",
+    "analysis": "read命令接收用户输入并存储到变量中",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "Shell脚本中整数运算使用什么语法？",
+    "options": "[\"A. $(())\", \"B. []\", \"C. {}\", \"D. ()\"]",
+    "answer": "A",
+    "analysis": "Shell使用$(())进行整数运算，如$((a+b))",
+    "difficulty": 2
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "if条件判断的结束关键字是？",
+    "options": "[\"A. fi\", \"B. end\", \"C. done\", \"D. break\"]",
+    "answer": "A",
+    "analysis": "if语句必须以fi结束，形成if...fi的配对",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "数字比较中-gt表示？",
+    "options": "[\"A. \\u5927\\u4e8e\", \"B. \\u5c0f\\u4e8e\", \"C. \\u7b49\\u4e8e\", \"D. \\u4e0d\\u7b49\\u4e8e\"]",
+    "answer": "A",
+    "analysis": "-gt表示大于（greater than）",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "数字比较中-eq表示？",
+    "options": "[\"A. \\u7b49\\u4e8e\", \"B. \\u5927\\u4e8e\", \"C. \\u5c0f\\u4e8e\", \"D. \\u4e0d\\u7b49\\u4e8e\"]",
+    "answer": "A",
+    "analysis": "-eq表示等于（equal）",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "文件判断中-f表示？",
+    "options": "[\"A. \\u5224\\u65ad\\u662f\\u5426\\u662f\\u666e\\u901a\\u6587\\u4ef6\", \"B. \\u5224\\u65ad\\u662f\\u5426\\u662f\\u76ee\\u5f55\", \"C. \\u5224\\u65ad\\u662f\\u5426\\u5b58\\u5728\", \"D. \\u5224\\u65ad\\u662f\\u5426\\u53ef\\u8bfb\"]",
+    "answer": "A",
+    "analysis": "-f判断是否是普通文件（不是目录）",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "文件判断中-d表示？",
+    "options": "[\"A. \\u5224\\u65ad\\u662f\\u5426\\u662f\\u76ee\\u5f55\", \"B. \\u5224\\u65ad\\u662f\\u5426\\u662f\\u6587\\u4ef6\", \"C. \\u5224\\u65ad\\u662f\\u5426\\u5b58\\u5728\", \"D. \\u5224\\u65ad\\u662f\\u5426\\u53ef\\u5199\"]",
+    "answer": "A",
+    "analysis": "-d判断是否是目录（directory）",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "文件判断中-e表示？",
+    "options": "[\"A. \\u5224\\u65ad\\u6587\\u4ef6\\u6216\\u76ee\\u5f55\\u662f\\u5426\\u5b58\\u5728\", \"B. \\u5224\\u65ad\\u662f\\u5426\\u4e3a\\u7a7a\", \"C. \\u5224\\u65ad\\u662f\\u5426\\u53ef\\u6267\\u884c\", \"D. \\u5224\\u65ad\\u662f\\u5426\\u662f\\u6587\\u4ef6\"]",
+    "answer": "A",
+    "analysis": "-e判断文件或文件夹是否存在（exists）",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "for循环的结束关键字是？",
+    "options": "[\"A. done\", \"B. fi\", \"C. end\", \"D. break\"]",
+    "answer": "A",
+    "analysis": "for循环使用do...done包围循环体",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "while循环的条件判断语法是？",
+    "options": "[\"A. while [ \\u6761\\u4ef6 ]; do\", \"B. while \\u6761\\u4ef6 do\", \"C. while (\\u6761\\u4ef6)\", \"D. while {\\u6761\\u4ef6}\"]",
+    "answer": "A",
+    "analysis": "while循环语法：while [ 条件 ]; do ... done",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "循环中break的作用是？",
+    "options": "[\"A. \\u7acb\\u5373\\u7ec8\\u6b62\\u6574\\u4e2a\\u5faa\\u73af\", \"B. \\u8df3\\u8fc7\\u5f53\\u524d\\u4e00\\u6b21\\u5faa\\u73af\", \"C. \\u9000\\u51fa\\u811a\\u672c\", \"D. \\u8fd4\\u56de\\u503c\"]",
+    "answer": "A",
+    "analysis": "break立即终止整个循环，执行循环后面的代码",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "循环中continue的作用是？",
+    "options": "[\"A. \\u8df3\\u8fc7\\u5f53\\u524d\\u4e00\\u6b21\\u5faa\\u73af\", \"B. \\u7ec8\\u6b62\\u6574\\u4e2a\\u5faa\\u73af\", \"C. \\u9000\\u51fa\\u811a\\u672c\", \"D. \\u8fd4\\u56de\\u503c\"]",
+    "answer": "A",
+    "analysis": "continue跳过当前一次循环，继续执行下一次循环",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "mkdir命令的作用是？",
+    "options": "[\"A. \\u521b\\u5efa\\u76ee\\u5f55\", \"B. \\u521b\\u5efa\\u6587\\u4ef6\", \"C. \\u5220\\u9664\\u6587\\u4ef6\", \"D. \\u590d\\u5236\\u6587\\u4ef6\"]",
+    "answer": "A",
+    "analysis": "mkdir(make directory)用于创建新目录",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "touch命令的作用是？",
+    "options": "[\"A. \\u521b\\u5efa\\u7a7a\\u6587\\u4ef6\", \"B. \\u521b\\u5efa\\u76ee\\u5f55\", \"C. \\u5220\\u9664\\u6587\\u4ef6\", \"D. \\u590d\\u5236\\u6587\\u4ef6\"]",
+    "answer": "A",
+    "analysis": "touch用于创建空文件或更新文件时间",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "cp命令的作用是？",
+    "options": "[\"A. \\u590d\\u5236\\u6587\\u4ef6/\\u76ee\\u5f55\", \"B. \\u79fb\\u52a8\\u6587\\u4ef6\", \"C. \\u5220\\u9664\\u6587\\u4ef6\", \"D. \\u91cd\\u547d\\u540d\\u6587\\u4ef6\"]",
+    "answer": "A",
+    "analysis": "cp(copy)用于复制文件或目录",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "mv命令的作用是？",
+    "options": "[\"A. \\u79fb\\u52a8\\u6216\\u91cd\\u547d\\u540d\\u6587\\u4ef6/\\u76ee\\u5f55\", \"B. \\u590d\\u5236\\u6587\\u4ef6\", \"C. \\u5220\\u9664\\u6587\\u4ef6\", \"D. \\u521b\\u5efa\\u6587\\u4ef6\"]",
+    "answer": "A",
+    "analysis": "mv(move)用于移动或重命名文件/目录",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "cat命令的作用是？",
+    "options": "[\"A. \\u67e5\\u770b\\u6587\\u4ef6\\u5185\\u5bb9\", \"B. \\u521b\\u5efa\\u6587\\u4ef6\", \"C. \\u590d\\u5236\\u6587\\u4ef6\", \"D. \\u5220\\u9664\\u6587\\u4ef6\"]",
+    "answer": "A",
+    "analysis": "cat用于查看文件全部内容",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "set -x的作用是？",
+    "options": "[\"A. \\u5f00\\u542f\\u8c03\\u8bd5\\u6a21\\u5f0f\\uff0c\\u663e\\u793a\\u6bcf\\u6b65\\u6267\\u884c\\u8fc7\\u7a0b\", \"B. \\u9000\\u51fa\\u811a\\u672c\", \"C. \\u5b9a\\u4e49\\u51fd\\u6570\", \"D. \\u8bbe\\u7f6e\\u53d8\\u91cf\"]",
+    "answer": "A",
+    "analysis": "set -x开启调试模式，显示脚本每一步执行的命令和变量值",
+    "difficulty": 2
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "{1..10}表示什么？",
+    "options": "[\"A. 1\\u523010\\u7684\\u6570\\u5b57\\u5e8f\\u5217\", \"B. 10\\u52301\\u7684\\u5e8f\\u5217\", \"C. 1\\u548c10\\u4e24\\u4e2a\\u6570\\u5b57\", \"D. 1\\u621610\"]",
+    "answer": "A",
+    "analysis": "{1..10}表示1到10的数字序列，是一种简写语法",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "judge",
+    "content": "Shell脚本中变量赋值时，等号前后可以有空格。",
+    "options": null,
+    "answer": "FALSE",
+    "analysis": "变量赋值时等号前后不能有空格，否则会报错",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "judge",
+    "content": "if条件判断中，[]前后必须有空格。",
+    "options": null,
+    "answer": "TRUE",
+    "analysis": "Shell中[]前后必须有空格，如[ ${num} -gt 10 ]",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "judge",
+    "content": "Linux默认使用的是Bash Shell。",
+    "options": null,
+    "answer": "TRUE",
+    "analysis": "Linux系统默认使用Bash（Bourne Again Shell）",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "pwd命令的作用是？",
+    "options": "[\"A. \\u67e5\\u770b\\u5f53\\u524d\\u5de5\\u4f5c\\u76ee\\u5f55\", \"B. \\u521b\\u5efa\\u76ee\\u5f55\", \"C. \\u5220\\u9664\\u76ee\\u5f55\", \"D. \\u5207\\u6362\\u76ee\\u5f55\"]",
+    "answer": "A",
+    "analysis": "pwd(print working directory)显示当前目录路径",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "ls命令的作用是？",
+    "options": "[\"A. \\u5217\\u51fa\\u76ee\\u5f55\\u4e0b\\u7684\\u6587\\u4ef6\", \"B. \\u521b\\u5efa\\u6587\\u4ef6\", \"C. \\u5220\\u9664\\u6587\\u4ef6\", \"D. \\u79fb\\u52a8\\u6587\\u4ef6\"]",
+    "answer": "A",
+    "analysis": "ls(list)列出目录下的文件/文件夹",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "cd命令的作用是？",
+    "options": "[\"A. \\u5207\\u6362\\u5de5\\u4f5c\\u76ee\\u5f55\", \"B. \\u590d\\u5236\\u6587\\u4ef6\", \"C. \\u5220\\u9664\\u6587\\u4ef6\", \"D. \\u521b\\u5efa\\u6587\\u4ef6\"]",
+    "answer": "A",
+    "analysis": "cd(change directory)切换到指定目录",
+    "difficulty": 1
+  },
+  {
+    "category": "Linux",
+    "type": "single",
+    "content": "rm -rf命令的作用是？",
+    "options": "[\"A. \\u5f3a\\u5236\\u9012\\u5f52\\u5220\\u9664\\u76ee\\u5f55\", \"B. \\u590d\\u5236\\u6587\\u4ef6\", \"C. \\u79fb\\u52a8\\u6587\\u4ef6\", \"D. \\u521b\\u5efa\\u76ee\\u5f55\"]",
+    "answer": "A",
+    "analysis": "rm -rf强制递归删除目录及其内容",
+    "difficulty": 1
+  }
+]

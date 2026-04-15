@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 - 在线考试系统</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 在线考试系统</h1>
+            <nav>
+                <a href="/">首页</a>
+                <a href="/login">登录</a>
+            </nav>
+        </header>
+
+        <main class="auth-container">
+            <div class="auth-box">
+                <h2>用户注册</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label>用户名</label>
+                        <input type="text" name="username" required placeholder="请输入用户名" minlength="3">
+                    </div>
+                    <div class="form-group">
+                        <label>密码</label>
+                        <input type="password" name="password" required placeholder="请输入密码" minlength="6">
+                    </div>
+                    <div class="form-group" style="display:none;">
+                        <select name="role">
+                            <option value="student">学生</option>
+                        </select>
+                    </div>
+                    <div class="error" id="error" style="display:none;"></div>
+                    <button type="submit" class="btn btn-primary btn-block">注册</button>
+                </form>
+                <p class="auth-tip">
+                    已有账号？<a href="/login">立即登录</a>
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const errorEl = document.getElementById('error');
+            const btn = e.target.querySelector('button[type="submit"]');
+
+            btn.disabled = true;
+            btn.textContent = '提交中...';
+
+            try {
+                const res = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        username: formData.get('username'),
+                        password: formData.get('password')
+                    })
+                });
+
+                const data = await res.json();
+                if (!res.ok) {
+                    errorEl.textContent = data.detail || '注册失败';
+                    errorEl.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = '注册';
+                    return;
+                }
+
+                // 注册申请提交成功
+                alert('注册申请已提交！\n\n请等待管理员审批后登录。');
+                window.location.href = '/login';
+            } catch (e) {
+                errorEl.textContent = '网络错误，请重试';
+                errorEl.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = '注册';
+            }
+        });
+    </script>
+</body>
+</html>

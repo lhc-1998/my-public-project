@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考试详情 - 在线考试系统</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        .code-block {
+            background: #1e1e1e;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin: 8px 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #d4d4d4;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .code-block code {
+            display: block;
+        }
+        .question-content pre, .short-answer-review pre {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 在线考试系统</h1>
+            <nav>
+                <a href="/exam">开始考试</a>
+                <a href="/history">考试记录</a>
+                <a href="/questions" id="qLink" style="display:none;">题库管理</a>
+                <a href="/admin" id="adminLink" style="display:none;">管理后台</a>
+                <button onclick="logout()" class="btn btn-outline">退出</button>
+            </nav>
+        </header>
+
+        <main>
+            <div class="exam-result" id="examResult">
+                <div class="result-header">
+                    <h2 id="examTitle">考试详情</h2>
+                    <a href="/exam" class="btn">返回</a>
+                </div>
+                <div class="result-summary" id="resultSummary"></div>
+                <div id="questionsList"></div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const examId = {{ exam_id }};
+
+        function getToken() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = '/login';
+                return null;
+            }
+            return token;
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = '/';
+        }
+
+        async function loadExam() {
+            const token = getToken();
+
+            try {
+                const res = await fetch(`/api/exam/${examId}`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (!res.ok) {
+                    alert('加载失败');
+                    window.location.href = '/history';
+                    return;
+                }
+
+                const exam = await res.json();
+                renderExam(exam);
+            } catch (e) {
+                alert('网络错误');
+            }
+        }
+
+        function renderExam(exam) {
+            document.getElementById('examTitle').textContent = exam.title;
+
+            const percentage = exam.total_score > 0 ? Math.round((exam.score / exam.total_score) * 100) : 0;
+            const statusClass = exam.status === 'graded' ? 
+                (percentage >= 60 ? 'pass' : 'fail') : 'pending';
+
+            document.getElementById('resultSummary').innerHTML = `
+                <div class="score-card ${statusClass}">
+                    <div class="score-main">
+                        <span class="score-label">得分</span>
+                        <span class="score-value">${exam.score}</span>
+                        <span class="score-total">/ ${exam.total_score}</span>
+                    </div>
+                    <div class="score-percent">${percentage}%</div>
+                    <div class="status-badge ${statusClass}">${exam.status === 'graded' ? (percentage >= 60 ? '及格' : '不及格') : '待评分'}</div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="stat-label">题目数量</span>
+                        <span class="stat-value">${exam.answers.length} 题</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">正确数</span>
+                        <span class="stat-value">${exam.answers.filter(a => a.is_correct).length} 题</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">考试时间</span>
+                        <span class="stat-value">${new Date(exam.created_at).toLocaleString()}</span>
+                    </div>
+                </div>
+            `;
+
+            const typeNames = {
+                'single': '单选题',
+                'multiple': '多选题',
+                'judge': '判断题',
+                'short': '简答题'
+            };
+
+            document.getElementById('questionsList').innerHTML = exam.answers.map((item, index) => {
+                const q = item.question;
+                let optionsHtml = '';
+
+                if (q.type === 'single' || q.type === 'multiple') {
+                    const options = JSON.parse(q.options || '[]');
+                    const letterMap = ['A', 'B', 'C', 'D', 'E', 'F'];
+                    
+                    // 解析正确答案（可能是字母A,B,C或文本）
+                    let correctLetters = [];
+                    const answerTrimmed = q.answer.trim();
+                    
+                    // 去掉方括号（如 [允许的来源域名] -> 允许的来源域名）
+                    const answerCleaned = answerTrimmed.replace(/^\[|\]$/g, '').trim();
+                    
+                    // 检查答案是否为字母格式（如 A 或 A,B,D）
+                    const isLetterFormat = /^[A-Za-z](,[A-Za-z])*$/.test(answerCleaned);
+                    
+                    if (isLetterFormat) {
+                        // 字母格式：直接解析
+                        correctLetters = answerCleaned.split(',').map(a => a.trim().toUpperCase());
+                    } else {
+                        // 文本格式：匹配选项文本，找到对应的字母
+                        const answerLower = answerCleaned.toLowerCase();
+                        options.forEach((opt, idx) => {
+                            const optText = opt.replace(/^[A-F]\.\s*/, '').toLowerCase();
+                            // 精确匹配或包含匹配
+                            if (optText === answerLower || optText.includes(answerLower) || answerLower.includes(optText)) {
+                                const letter = letterMap[idx] || String.fromCharCode(65 + idx);
+                                correctLetters.push(letter);
+                            }
+                        });
+                    }
+                    
+                    optionsHtml = `<div class="options-list">
+                        ${options.map((opt, idx) => {
+                            let cls = '';
+                            const letter = letterMap[idx] || String.fromCharCode(65 + idx);
+                            
+                            // 检查是否为正确答案
+                            const isCorrectAnswer = correctLetters.includes(letter);
+                            if (isCorrectAnswer) cls = 'correct-answer';
+                            
+                            // 判断用户是否选错此选项
+                            if (item.user_answer) {
+                                const userAnswers = item.user_answer.split(',').map(a => a.trim().toUpperCase());
+                                const userSelected = userAnswers.includes(letter);
+                                if (userSelected && !isCorrectAnswer) {
+                                    cls = 'wrong-answer';
+                                }
+                            }
+                            
+                            return `<label class="option-item ${cls}">${escapeHtml(opt)}</label>`;
+                        }).join('')}
+                    </div>`;
+                } else if (q.type === 'judge') {
+                    // 判断题答案可能是 TRUE/FALSE 或 正确/错误
+                    const correctAnswer = q.answer.trim().toUpperCase();
+                    const isCorrect = correctAnswer === 'TRUE' || correctAnswer === '正确';
+                    const isWrong = correctAnswer === 'FALSE' || correctAnswer === '错误';
+                    
+                    // 用户答案判断
+                    const userAnswer = item.user_answer ? item.user_answer.trim().toUpperCase() : '';
+                    const userSelectedTrue = userAnswer === 'TRUE' || userAnswer === '正确';
+                    const userSelectedFalse = userAnswer === 'FALSE' || userAnswer === '错误';
+                    
+                    // 显示符号
+                    const trueIcon = userSelectedTrue ? (item.is_correct ? '✅' : '❌') : '';
+                    const falseIcon = userSelectedFalse ? (item.is_correct ? '✅' : '❌') : '';
+                    
+                    optionsHtml = `<div class="options-list">
+                        <label class="option-item ${isCorrect ? 'correct-answer' : ''}">
+                            ${trueIcon} 正确
+                        </label>
+                        <label class="option-item ${isWrong ? 'correct-answer' : ''}">
+                            ${falseIcon} 错误
+                        </label>
+                    </div>`;
+                } else {
+                    optionsHtml = `
+                        <div class="short-answer-review">
+                            <p><strong>你的答案：</strong>${formatCode(item.user_answer) || '（未作答）'}</p>
+                            <p><strong>参考答案：</strong>${formatCode(q.answer)}</p>
+                        </div>
+                    `;
+                }
+
+                return `
+                    <div class="question-card ${item.is_correct ? 'correct' : 'wrong'}">
+                        <div class="question-header">
+                            <span class="question-number">第 ${index + 1} 题</span>
+                            <span class="question-type">${typeNames[q.type]}</span>
+                            <span class="question-category">${q.category}</span>
+                            <span class="result-badge ${item.is_correct ? 'correct' : 'wrong'}">
+                                ${item.is_correct ? '✓ 正确' : '✗ 错误'} (${item.score}分)
+                            </span>
+                        </div>
+                        <div class="question-content">${formatCode(q.content)}</div>
+                        ${optionsHtml}
+                        <div class="question-analysis">
+                            <strong>解析：</strong>${q.analysis || '无解析'}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        loadExam();
+        checkRole();
+
+        function checkRole() {
+            const userStr = localStorage.getItem('user');
+            if (userStr) {
+                const user = JSON.parse(userStr);
+                if (user.role === 'teacher' || user.role === 'admin') {
+                    document.getElementById('qLink').style.display = '';
+                }
+                if (user.role === 'admin') {
+                    document.getElementById('adminLink').style.display = '';
+                }
+            }
+        }
+
+        // HTML转义
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // 格式化代码显示（用于题目内容）
+        function formatCode(text) {
+            if (!text) return '';
+            const escaped = escapeHtml(text);
+            // 检测是否包含代码特征
+            if (text.match(/[;{}()]/g) || text.match(/\b(select|from|where|create|insert|def|class|function|var|let|const|if|else|for|while|return)\b/gi)) {
+                return `<pre class="code-block"><code>${escaped}</code></pre>`;
+            }
+            return escaped;
+        }
+    </script>
+</body>
+</html>

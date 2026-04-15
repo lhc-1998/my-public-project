@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线答题 - 在线考试系统</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        .code-block {
+            background: #1e1e1e;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin: 8px 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #d4d4d4;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .code-block code {
+            display: block;
+        }
+        .question-content pre {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 在线考试系统</h1>
+            <nav id="nav">
+                <a href="/exam">开始考试</a>
+                <a href="/history">考试记录</a>
+                <a href="/questions" id="qLink" style="display:none;">题库管理</a>
+                <a href="/admin" id="adminLink" style="display:none;">管理后台</a>
+                <button onclick="logout()" class="btn btn-outline">退出</button>
+            </nav>
+        </header>
+
+        <main>
+            <h2>开始考试</h2>
+            
+            <div class="exam-config" id="examConfig">
+                <div class="config-card">
+                    <h3>选择考试类别</h3>
+                    <div class="category-grid">
+                        <label class="category-option">
+                            <input type="radio" name="category" value="all" checked>
+                            <span class="category-box">
+                                <span class="category-icon">📖</span>
+                                <span class="category-name">综合测试</span>
+                            </span>
+                        </label>
+                        <label class="category-option">
+                            <input type="radio" name="category" value="MySQL">
+                            <span class="category-box">
+                                <span class="category-icon">🗄️</span>
+                                <span class="category-name">MySQL</span>
+                            </span>
+                        </label>
+                        <label class="category-option">
+                            <input type="radio" name="category" value="Python">
+                            <span class="category-box">
+                                <span class="category-icon">🐍</span>
+                                <span class="category-name">Python</span>
+                            </span>
+                        </label>
+                        <label class="category-option">
+                            <input type="radio" name="category" value="Linux">
+                            <span class="category-box">
+                                <span class="category-icon">🐧</span>
+                                <span class="category-name">Linux</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="config-card">
+                    <h3>题目数量</h3>
+                    <select id="questionCount" class="form-control">
+                        <option value="5">5 题</option>
+                        <option value="10" selected>10 题</option>
+                        <option value="15">15 题</option>
+                        <option value="20">20 题</option>
+                    </select>
+                </div>
+
+                <button onclick="startExam()" class="btn btn-primary btn-block btn-lg">
+                    🎯 开始考试
+                </button>
+            </div>
+
+            <div class="exam-paper" id="examPaper" style="display:none;">
+                <div class="exam-header">
+                    <h3 id="examTitle">考试进行中</h3>
+                    <div class="exam-timer">
+                        <span>⏱️</span>
+                        <span id="timer">00:00</span>
+                    </div>
+                </div>
+                <div id="questionsList"></div>
+                <div class="exam-footer">
+                    <button onclick="submitExam()" class="btn btn-primary btn-block">提交试卷</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let currentExam = null;
+        let timerInterval = null;
+        let startTime = null;
+
+        function getToken() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = '/login';
+                return null;
+            }
+            return token;
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = '/';
+        }
+
+        async function startExam() {
+            const category = document.querySelector('input[name="category"]:checked').value;
+            const questionCount = parseInt(document.getElementById('questionCount').value);
+            const token = getToken();
+
+            try {
+                const res = await fetch('/api/exam/generate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ category, question_count: questionCount })
+                });
+
+                if (!res.ok) {
+                    const data = await res.json();
+                    alert(data.detail || '生成试卷失败');
+                    return;
+                }
+
+                currentExam = await res.json();
+                document.getElementById('examConfig').style.display = 'none';
+                document.getElementById('examPaper').style.display = 'block';
+                document.getElementById('examTitle').textContent = currentExam.title;
+
+                renderQuestions();
+                startTimer();
+            } catch (e) {
+                alert('网络错误，请重试');
+            }
+        }
+
+        function renderQuestions() {
+            const container = document.getElementById('questionsList');
+            const typeNames = {
+                'single': '单选题',
+                'multiple': '多选题',
+                'judge': '判断题',
+                'short': '简答题'
+            };
+
+            container.innerHTML = currentExam.answers.map((item, index) => {
+                const q = item.question;
+                let optionsHtml = '';
+                
+                if (q.type === 'single' || q.type === 'multiple') {
+                    const options = JSON.parse(q.options || '[]');
+                    const inputType = q.type === 'single' ? 'radio' : 'checkbox';
+                    const letterMap = ['A', 'B', 'C', 'D', 'E', 'F'];
+                    optionsHtml = `<div class="options-list">
+                        ${options.map((opt, idx) => {
+                            const letter = letterMap[idx] || String.fromCharCode(65 + idx);
+                            return `
+                            <label class="option-item">
+                                <input type="${inputType}" name="q_${q.id}" value="${letter}" onclick="saveAnswer(${q.id}, '${inputType}')">
+                                <span>${escapeHtml(opt)}</span>
+                            </label>
+                        `}).join('')}
+                    </div>`;
+                } else if (q.type === 'judge') {
+                    optionsHtml = `<div class="options-list">
+                        <label class="option-item">
+                            <input type="radio" name="q_${q.id}" value="TRUE" onclick="saveAnswer(${q.id}, 'radio')">
+                            <span>正确</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="q_${q.id}" value="FALSE" onclick="saveAnswer(${q.id}, 'radio')">
+                            <span>错误</span>
+                        </label>
+                    </div>`;
+                } else {
+                    optionsHtml = `<textarea class="form-control short-answer" 
+                        name="q_${q.id}" 
+                        placeholder="请输入答案..."
+                        onchange="saveAnswer(${q.id}, 'text')"></textarea>`;
+                }
+
+                return `
+                    <div class="question-card" id="question_${q.id}">
+                        <div class="question-header">
+                            <span class="question-number">第 ${index + 1} 题</span>
+                            <span class="question-type">${typeNames[q.type]}</span>
+                            <span class="question-category">${q.category}</span>
+                        </div>
+                        <div class="question-content">${formatCode(q.content)}</div>
+                        ${optionsHtml}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // HTML转义
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // 格式化代码显示（用于题目内容）
+        function formatCode(text) {
+            if (!text) return '';
+            const escaped = escapeHtml(text);
+            // 检测是否包含代码特征
+            if (text.match(/[;{}()]/g) || text.match(/\b(select|from|where|create|insert|def|class|function|var|let|const|if|else|for|while|return)\b/gi)) {
+                return `<pre class="code-block"><code>${escaped}</code></pre>`;
+            }
+            return escaped;
+        }
+
+        function saveAnswer(questionId, type) {
+            if (type === 'checkbox') {
+                // 多选题：收集选中的值并按字母排序
+                const checked = Array.from(document.querySelectorAll(`input[name="q_${questionId}"]:checked`))
+                    .map(el => el.value)
+                    .sort()  // 按字母排序，确保答案顺序一致
+                    .join(',');
+                const answer = currentExam.answers.find(a => a.question_id === questionId);
+                if (answer) answer.user_answer = checked;
+            } else if (type === 'radio') {
+                const selected = document.querySelector(`input[name="q_${questionId}"]:checked`);
+                const answer = currentExam.answers.find(a => a.question_id === questionId);
+                if (answer && selected) answer.user_answer = selected.value;
+            } else {
+                const textarea = document.querySelector(`textarea[name="q_${questionId}"]`);
+                const answer = currentExam.answers.find(a => a.question_id === questionId);
+                if (answer) answer.user_answer = textarea.value;
+            }
+        }
+
+        function startTimer() {
+            startTime = Date.now();
+            timerInterval = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                const minutes = Math.floor(elapsed / 60).toString().padStart(2, '0');
+                const seconds = (elapsed % 60).toString().padStart(2, '0');
+                document.getElementById('timer').textContent = `${minutes}:${seconds}`;
+            }, 1000);
+        }
+
+        async function submitExam() {
+            if (!confirm('确定要提交试卷吗？提交后无法修改答案。')) return;
+
+            clearInterval(timerInterval);
+
+            // 收集所有答案
+            const answers = currentExam.answers.map(a => ({
+                question_id: a.question_id,
+                user_answer: a.user_answer || ''
+            }));
+
+            const token = getToken();
+
+            try {
+                const res = await fetch(`/api/exam/${currentExam.id}/submit`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ answers })
+                });
+
+                const data = await res.json();
+                if (!res.ok) {
+                    alert(data.detail || '提交失败');
+                    return;
+                }
+
+                alert(`考试完成！\n得分：${data.score} / ${data.total}`);
+                window.location.href = `/exam/${currentExam.id}`;
+            } catch (e) {
+                alert('网络错误，请重试');
+            }
+        }
+
+        // 页面加载时检查登录
+        getToken();
+        checkRole();
+
+        function checkRole() {
+            const userStr = localStorage.getItem('user');
+            if (userStr) {
+                const user = JSON.parse(userStr);
+                if (user.role === 'teacher' || user.role === 'admin') {
+                    document.getElementById('qLink').style.display = '';
+                }
+                if (user.role === 'admin') {
+                    document.getElementById('adminLink').style.display = '';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

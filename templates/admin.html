@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理后台 - 在线考试系统</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 在线考试系统</h1>
+            <nav>
+                <a href="/index">返回首页</a>
+                <a href="/exam">开始考试</a>
+                <a href="/history">考试记录</a>
+                <a href="/questions">题库管理</a>
+                <button onclick="logout()" class="btn btn-outline">退出</button>
+            </nav>
+        </header>
+
+        <main>
+            <div class="page-header">
+                <h2>管理后台</h2>
+                <span id="userInfo"></span>
+            </div>
+
+            <!-- 标签页导航 -->
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="switchTab('registrations')">注册申请</button>
+                <button class="tab-btn" onclick="switchTab('users')">用户管理</button>
+            </div>
+
+            <!-- 注册申请管理 -->
+            <div id="registrations-tab" class="tab-content active">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>待审批申请</h3>
+                        <button onclick="loadRegistrations()" class="btn btn-sm">刷新</button>
+                    </div>
+                    <div id="registrationList" class="request-list"></div>
+                </div>
+            </div>
+
+            <!-- 用户管理 -->
+            <div id="users-tab" class="tab-content">
+                <div class="panel">
+                    <h3>用户列表</h3>
+                    <div id="userList" class="user-list"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let currentUser = null;
+
+        function getToken() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = '/login';
+                return null;
+            }
+            return token;
+        }
+
+        function checkAdmin() {
+            const userStr = localStorage.getItem('user');
+            if (userStr) {
+                currentUser = JSON.parse(userStr);
+                if (currentUser.role !== 'admin') {
+                    alert('只有管理员可以访问此页面');
+                    window.location.href = '/index';
+                    return false;
+                }
+                document.getElementById('userInfo').textContent = `当前用户: ${currentUser.username} (${currentUser.role === 'admin' ? '管理员' : '其他'})`;
+            }
+            return true;
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = '/';
+        }
+
+        function switchTab(tabName) {
+            // 切换标签按钮
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // 切换内容
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tabName + '-tab').classList.add('active');
+
+            // 加载对应数据
+            if (tabName === 'registrations') {
+                loadRegistrations();
+            } else {
+                loadUsers();
+            }
+        }
+
+        async function loadRegistrations() {
+            const token = getToken();
+            try {
+                const res = await fetch('/api/admin/registration-requests', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (!res.ok) {
+                    alert('加载失败，请重新登录');
+                    return;
+                }
+
+                const data = await res.json();
+                renderRegistrations(data.requests);
+            } catch (e) {
+                console.error('加载失败', e);
+            }
+        }
+
+        function renderRegistrations(requests) {
+            const container = document.getElementById('registrationList');
+
+            if (!requests || requests.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>暂无注册申请</p></div>';
+                return;
+            }
+
+            const statusNames = {
+                'pending': '待审批',
+                'approved': '已通过',
+                'rejected': '已拒绝',
+                'expired': '已过期'
+            };
+
+            const statusColors = {
+                'pending': '#ed8936',
+                'approved': '#48bb78',
+                'rejected': '#f56565',
+                'expired': '#999'
+            };
+
+            container.innerHTML = requests.map(req => `
+                <div class="request-item">
+                    <div class="request-info">
+                        <div class="request-user">
+                            <strong>${req.username}</strong>
+                            <span class="status-badge" style="background: ${statusColors[req.status]}">${statusNames[req.status]}</span>
+                        </div>
+                        <div class="request-time">
+                            申请时间: ${new Date(req.created_at).toLocaleString()}
+                            ${req.reviewed_at ? '<br>处理时间: ' + new Date(req.reviewed_at).toLocaleString() : ''}
+                            ${req.reject_reason ? '<br><span style="color: #f56565">拒绝原因: ' + req.reject_reason + '</span>' : ''}
+                        </div>
+                    </div>
+                    ${req.status === 'pending' ? `
+                        <div class="request-actions">
+                            <button onclick="approveRequest(${req.id})" class="btn btn-sm" style="background: #48bb78">批准</button>
+                            <button onclick="rejectRequest(${req.id})" class="btn btn-sm btn-danger">拒绝</button>
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+
+        async function approveRequest(id) {
+            if (!confirm('确定批准此注册申请？')) return;
+
+            const token = getToken();
+            try {
+                const res = await fetch(`/api/admin/registration-requests/${id}/approve`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (res.ok) {
+                    alert('已批准！用户可以登录了');
+                    loadRegistrations();
+                } else {
+                    const data = await res.json();
+                    alert('操作失败: ' + (data.detail || '未知错误'));
+                }
+            } catch (e) {
+                alert('操作失败');
+            }
+        }
+
+        async function rejectRequest(id) {
+            const reason = prompt('请输入拒绝原因（可选）:');
+            if (reason === null) return;
+
+            const token = getToken();
+            try {
+                const res = await fetch(`/api/admin/registration-requests/${id}/reject`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ action: 'reject', reject_reason: reason })
+                });
+
+                if (res.ok) {
+                    alert('已拒绝');
+                    loadRegistrations();
+                } else {
+                    alert('操作失败');
+                }
+            } catch (e) {
+                alert('操作失败');
+            }
+        }
+
+        async function loadUsers() {
+            const token = getToken();
+            try {
+                const res = await fetch('/api/admin/users', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (!res.ok) {
+                    alert('加载失败');
+                    return;
+                }
+
+                const data = await res.json();
+                renderUsers(data.users);
+            } catch (e) {
+                console.error('加载失败', e);
+            }
+        }
+
+        function renderUsers(users) {
+            const container = document.getElementById('userList');
+
+            if (!users || users.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>暂无用户</p></div>';
+                return;
+            }
+
+            const roleNames = { 'admin': '管理员', 'teacher': '教师', 'student': '学生' };
+            const roleColors = { 'admin': '#f56565', 'teacher': '#667eea', 'student': '#48bb78' };
+
+            container.innerHTML = users.map(user => `
+                <div class="user-item">
+                    <div class="user-info">
+                        <strong>${user.username}</strong>
+                        <span class="role-badge" style="background: ${roleColors[user.role]}">${roleNames[user.role]}</span>
+                    </div>
+                    <div class="user-time">创建于: ${new Date(user.created_at).toLocaleString()}</div>
+                </div>
+            `).join('');
+        }
+
+        // 初始化
+        if (checkAdmin()) {
+            loadRegistrations();
+        }
+    </script>
+
+    <style>
+        .tab-nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .tab-btn:hover {
+            background: #f7fafc;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .panel h3 {
+            color: #333;
+            margin: 0;
+        }
+
+        .request-list, .user-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .request-item, .user-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #f7fafc;
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+
+        .request-item:hover, .user-item:hover {
+            background: #edf2f7;
+        }
+
+        .request-info, .user-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .request-user {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .request-user strong {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .request-time {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .request-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .user-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+        }
+
+        .user-info {
+            flex-direction: row;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .user-time {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .status-badge, .role-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+        }
+    </style>
+</body>
+</html>

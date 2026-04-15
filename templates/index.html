@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线考试系统</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 在线考试系统</h1>
+            <nav id="nav">
+                <a href="/login" class="btn">登录</a>
+                <a href="/register" class="btn">注册</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2>欢迎使用在线考试系统</h2>
+                <p>支持 MySQL、Python、Linux Shell 三类题库</p>
+            </section>
+
+            <section class="stats" id="stats">
+                <div class="stat-card">
+                    <h3>题目总数</h3>
+                    <p class="stat-number" id="total-questions">--</p>
+                </div>
+                <div class="stat-card">
+                    <h3>MySQL</h3>
+                    <p class="stat-number" id="mysql-count">--</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Python</h3>
+                    <p class="stat-number" id="python-count">--</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Linux</h3>
+                    <p class="stat-number" id="linux-count">--</p>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="feature">
+                    <h3>🎯 多种题型</h3>
+                    <p>支持单选题、多选题、判断题、简答题</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 智能评分</h3>
+                    <p>自动评分系统，即时反馈成绩</p>
+                </div>
+                <div class="feature">
+                    <h3>📚 丰富题库</h3>
+                    <p>涵盖 MySQL、Python、Linux Shell</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        async function loadStats() {
+            try {
+                const res = await fetch('/api/stats/public');
+                const data = await res.json();
+                document.getElementById('total-questions').textContent = data.total_questions;
+                document.getElementById('mysql-count').textContent = data.category_stats.MySQL || 0;
+                document.getElementById('python-count').textContent = data.category_stats.Python || 0;
+                document.getElementById('linux-count').textContent = data.category_stats.Linux || 0;
+            } catch (e) {
+                console.error('加载统计失败', e);
+            }
+        }
+
+        // 检查登录状态
+        function checkAuth() {
+            const token = localStorage.getItem('token');
+            const userStr = localStorage.getItem('user');
+            const nav = document.getElementById('nav');
+            if (token && userStr) {
+                const user = JSON.parse(userStr);
+                let adminLink = '';
+                if (user.role === 'admin') {
+                    adminLink = '<a href="/admin" class="btn">管理后台</a>';
+                }
+                nav.innerHTML = `
+                    ${adminLink}
+                    <a href="/exam" class="btn">开始考试</a>
+                    <a href="/history" class="btn">考试记录</a>
+                    <a href="/questions" class="btn">题库管理</a>
+                    <button onclick="logout()" class="btn btn-outline">退出</button>
+                `;
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = '/';
+        }
+
+        loadStats();
+        checkAuth();
+    </script>
+</body>
+</html>

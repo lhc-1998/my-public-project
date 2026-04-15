@@ -1,0 +1,2288 @@
+[
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中列表的索引从哪个数字开始？",
+    "options": "[\"A. 0\", \"B. 1\", \"C. -1\", \"D. \\u7531\\u5f00\\u53d1\\u8005\\u6307\\u5b9a\"]",
+    "answer": "A",
+    "analysis": "Python列表的索引从0开始",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下哪个是Python的不可变数据类型？",
+    "options": "[\"A. list\", \"B. dict\", \"C. tuple\", \"D. set\"]",
+    "answer": "C",
+    "analysis": "tuple是不可变的，创建后不能修改",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "multiple",
+    "content": "以下哪些是Python的数据类型？",
+    "options": "[\"A. int\", \"B. str\", \"C. array\", \"D. bool\"]",
+    "answer": "A,B,D",
+    "analysis": "int、str、bool都是Python内置数据类型",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "Python支持多继承。",
+    "options": null,
+    "answer": "TRUE",
+    "analysis": "Python允许多继承",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "Python中的字符串是不可变的。",
+    "options": null,
+    "answer": "TRUE",
+    "analysis": "字符串创建后不能直接修改",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "short",
+    "content": "请写出使用列表推导式生成1-10平方数的代码。",
+    "options": null,
+    "answer": "[x**2,for x,in range,range(1,11)]",
+    "analysis": "答案是 [x**2 for x in range(1, 11)]",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中用于输出到控制台的函数是？",
+    "options": "[\"A. echo()\", \"B. print()\", \"C. printf()\", \"D. console()\"]",
+    "answer": "B",
+    "analysis": "print()是Python的标准输出函数",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python的基本数据类型不包括以下哪个？",
+    "options": "[\"A. int\\uff08\\u6574\\u6570\\uff09\", \"B. float\\uff08\\u6d6e\\u70b9\\u6570\\uff09\", \"C. array\\uff08\\u6570\\u7ec4\\uff09\", \"D. str\\uff08\\u5b57\\u7b26\\u4e32\\uff09\"]",
+    "answer": "C",
+    "analysis": "Python基本数据类型包括int、float、str、bool；array需要导入numpy等库才能使用",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python列表的索引从哪个数字开始？",
+    "options": "[\"A. 0\", \"B. 1\", \"C. -1\", \"D. \\u7531\\u5f00\\u53d1\\u8005\\u6307\\u5b9a\"]",
+    "answer": "A",
+    "analysis": "Python列表的索引从0开始，第一个元素索引为0",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中以下哪个是不可变数据类型？",
+    "options": "[\"A. list\", \"B. dict\", \"C. tuple\", \"D. set\"]",
+    "answer": "C",
+    "analysis": "tuple是元组，创建后不能修改；list、dict、set都是可变的",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "用于检测数据类型的方法是？",
+    "options": "[\"A. typeof()\", \"B. type()\", \"C. datatype()\", \"D. check()\"]",
+    "answer": "B",
+    "analysis": "使用type(数据)可以检测数据类型",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "input()函数获取的输入默认是什么类型？",
+    "options": "[\"A. int\", \"B. float\", \"C. str\\uff08\\u5b57\\u7b26\\u4e32\\uff09\", \"D. bool\"]",
+    "answer": "C",
+    "analysis": "input()函数获取的所有输入默认都是字符串类型，需要转换才能进行数值计算",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中=和==的区别是？",
+    "options": "[\"A. =\\u662f\\u8d4b\\u503c\\uff0c==\\u662f\\u76f8\\u7b49\\u5224\\u65ad\", \"B. \\u4e24\\u8005\\u6ca1\\u6709\\u533a\\u522b\", \"C. =\\u662f\\u5224\\u65ad\\uff0c==\\u662f\\u8d4b\\u503c\", \"D. =\\u7528\\u4e8e\\u5b57\\u7b26\\u4e32\\uff0c==\\u7528\\u4e8e\\u6570\\u5b57\"]",
+    "answer": "A",
+    "analysis": "=用于赋值，==用于判断是否相等",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中字符串使用+号的作用是？",
+    "options": "[\"A. \\u6570\\u5b57\\u76f8\\u52a0\\u548c\\u5b57\\u7b26\\u4e32\\u62fc\\u63a5\", \"B. \\u53ea\\u80fd\\u62fc\\u63a5\\u5b57\\u7b26\\u4e32\", \"C. \\u53ea\\u80fd\\u505a\\u6570\\u5b57\\u52a0\\u6cd5\", \"D. \\u505a\\u51cf\\u6cd5\"]",
+    "answer": "A",
+    "analysis": "+运算符的作用取决于数据类型：数字相加，字符串拼接",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python变量的命名规则不包括？",
+    "options": "[\"A. \\u4e0d\\u80fd\\u4f7f\\u7528\\u5173\\u952e\\u5b57\", \"B. \\u53ea\\u80fd\\u4ee5\\u5b57\\u6bcd\\u3001\\u6570\\u5b57\\u3001\\u4e0b\\u5212\\u7ebf\\u7ec4\\u6210\", \"C. \\u6570\\u5b57\\u4e0d\\u80fd\\u5f00\\u5934\", \"D. \\u53ef\\u4ee5\\u4f7f\\u7528$\\u7b26\\u53f7\"]",
+    "answer": "D",
+    "analysis": "变量名只能包含字母、数字、下划线，$不是合法字符",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中常量的命名约定是？",
+    "options": "[\"A. \\u5168\\u90e8\\u5927\\u5199\", \"B. \\u5168\\u90e8\\u5c0f\\u5199\", \"C. \\u9996\\u5b57\\u6bcd\\u5927\\u5199\", \"D. \\u65e0\\u7ea6\\u5b9a\"]",
+    "answer": "A",
+    "analysis": "Python使用全大写字母和下划线命名表示常量，这是约定俗成的惯例",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "f-string格式化的语法是？",
+    "options": "[\"A. '\\u683c\\u5f0f{\\u53d8\\u91cf\\u540d}'\", \"B. f'\\u683c\\u5f0f{\\u53d8\\u91cf\\u540d}'\", \"C. format('\\u683c\\u5f0f{\\u53d8\\u91cf\\u540d}')\", \"D. print('{\\u53d8\\u91cf\\u540d}')\"]",
+    "answer": "B",
+    "analysis": "f-string在字符串前加f或F，用{变量名}嵌入变量或表达式",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "转义字符\\n表示什么？",
+    "options": "[\"A. \\u6362\\u884c\\u7b26\", \"B. \\u5236\\u8868\\u7b26\", \"C. \\u9000\\u683c\\u7b26\", \"D. \\u56de\\u8f66\\u7b26\"]",
+    "answer": "A",
+    "analysis": "\\n是换行符，让后续内容从新的一行开始",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中10 // 3的结果是？",
+    "options": "[\"A. 3.33\", \"B. 3\", \"C. 4\", \"D. 3.0\"]",
+    "answer": "B",
+    "analysis": "//是整数除法，结果取整，10//3=3",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中10 % 3的结果是？",
+    "options": "[\"A. 3\", \"B. 1\", \"C. 0\", \"D. 3.33\"]",
+    "answer": "B",
+    "analysis": "%是取余运算符，10%3=1（10除以3余1）",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "Python使用缩进来划分代码块。",
+    "options": null,
+    "answer": "TRUE",
+    "analysis": "Python强制使用缩进（通常4个空格）来表示代码层级关系",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中and运算符的特点是？",
+    "options": "[\"A. \\u4e24\\u8fb9\\u90fd\\u4e3aTrue\\u7ed3\\u679c\\u624d\\u4e3aTrue\", \"B. \\u4e00\\u8fb9\\u4e3aTrue\\u7ed3\\u679c\\u5c31\\u4e3aTrue\", \"C. \\u4e24\\u8fb9\\u90fd\\u4e3aFalse\\u7ed3\\u679c\\u624d\\u4e3aTrue\", \"D. \\u76f8\\u53cd\\u7ed3\\u679c\"]",
+    "answer": "A",
+    "analysis": "and是与运算，两边都为True结果才为True（一假则假）",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中or运算符的特点是？",
+    "options": "[\"A. \\u4e00\\u8fb9\\u4e3aTrue\\u7ed3\\u679c\\u5c31\\u4e3aTrue\", \"B. \\u4e24\\u8fb9\\u90fd\\u4e3aTrue\\u7ed3\\u679c\\u624d\\u4e3aTrue\", \"C. \\u4e24\\u8fb9\\u90fd\\u4e3aFalse\\u7ed3\\u679c\\u624d\\u4e3aTrue\", \"D. \\u53d6\\u53cd\\u7ed3\\u679c\"]",
+    "answer": "A",
+    "analysis": "or是或运算，一边为True结果就为True（一真则真）",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中not运算符的作用是？",
+    "options": "[\"A. \\u53d6\\u53cd\\uff0cTrue\\u53d8False\\uff0cFalse\\u53d8True\", \"B. \\u4fdd\\u6301\\u4e0d\\u53d8\", \"C. \\u6c42\\u548c\", \"D. \\u4e58\\u4ee5-1\"]",
+    "answer": "A",
+    "analysis": "not是非运算，对布尔值取反",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "if-elif-else结构中，哪个条件满足会执行对应代码块后跳出？",
+    "options": "[\"A. \\u7b2c\\u4e00\\u4e2a\\u6ee1\\u8db3\\u7684\\u6761\\u4ef6\", \"B. \\u6700\\u540e\\u4e00\\u4e2a\\u6761\\u4ef6\", \"C. \\u6240\\u6709\\u6761\\u4ef6\", \"D. \\u6ca1\\u6709\\u6761\\u4ef6\"]",
+    "answer": "A",
+    "analysis": "程序从上往下判断，满足某个条件执行完代码块后会跳出整个if结构",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "while循环的特点是？",
+    "options": "[\"A. \\u53ea\\u8981\\u6761\\u4ef6\\u6210\\u7acb\\uff0c\\u5c31\\u4e00\\u76f4\\u91cd\\u590d\\u6267\\u884c\", \"B. \\u53ea\\u6267\\u884c\\u4e00\\u6b21\", \"C. \\u6267\\u884c\\u56fa\\u5b9a\\u6b21\\u6570\", \"D. \\u4ece\\u540e\\u5f80\\u524d\\u6267\\u884c\"]",
+    "answer": "A",
+    "analysis": "while循环在条件为True时重复执行，需要防止死循环",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "range(5)生成的序列是？",
+    "options": "[\"A. 0,1,2,3,4\", \"B. 1,2,3,4,5\", \"C. 0,1,2,3,4,5\", \"D. 1,2,3,4\"]",
+    "answer": "A",
+    "analysis": "range()包头不包尾，从0开始，range(5)生成0-4",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "range(1,6,2)生成的序列是？",
+    "options": "[\"A. 1,3,5\", \"B. 1,2,3,4,5\", \"C. 2,4\", \"D. 1,3\"]",
+    "answer": "A",
+    "analysis": "range(起始,结束,步长)，包头不包尾，1,6,2表示从1开始到6，步长2，结果1,3,5",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "break语句的作用是？",
+    "options": "[\"A. \\u7acb\\u5373\\u7ec8\\u6b62\\u6574\\u4e2a\\u5faa\\u73af\", \"B. \\u8df3\\u8fc7\\u5f53\\u524d\\u4e00\\u6b21\\u5faa\\u73af\", \"C. \\u7ee7\\u7eed\\u6267\\u884c\\u5faa\\u73af\", \"D. \\u8fd4\\u56de\\u503c\"]",
+    "answer": "A",
+    "analysis": "break用于立即终止整个循环，执行循环后面的代码",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "continue语句的作用是？",
+    "options": "[\"A. \\u8df3\\u8fc7\\u5f53\\u524d\\u4e00\\u6b21\\u5faa\\u73af\\uff0c\\u7ee7\\u7eed\\u4e0b\\u4e00\\u6b21\", \"B. \\u7ec8\\u6b62\\u6574\\u4e2a\\u5faa\\u73af\", \"C. \\u9000\\u51fa\\u7a0b\\u5e8f\", \"D. \\u8fd4\\u56de\\u51fd\\u6570\\u503c\"]",
+    "answer": "A",
+    "analysis": "continue跳过本次循环剩下的代码，直接开始下一次循环",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python的三元运算语法是？",
+    "options": "[\"A. \\u4ee3\\u78011 if \\u6761\\u4ef6 else \\u4ee3\\u78012\", \"B. if \\u6761\\u4ef6 then \\u4ee3\\u78011 else \\u4ee3\\u78012\", \"C. \\u6761\\u4ef6 ? \\u4ee3\\u78011 : \\u4ee3\\u78012\", \"D. if \\u4ee3\\u78011 else \\u4ee3\\u78012\"]",
+    "answer": "A",
+    "analysis": "三元运算语法：代码1 if 条件 else 代码2，条件为True执行代码1，否则执行代码2",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "random.randint(1,10)生成的随机数范围是？",
+    "options": "[\"A. 1\\u523010\\uff0c\\u5305\\u542b\\u4e24\\u7aef\", \"B. 1\\u523010\\uff0c\\u4e0d\\u5305\\u542b10\", \"C. 0\\u52309\", \"D. 1\\u52309\"]",
+    "answer": "A",
+    "analysis": "random.randint(a,b)生成a到b之间的随机整数，包含两端",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "for循环只能用于遍历序列，不能用于固定次数循环。",
+    "options": null,
+    "answer": "FALSE",
+    "analysis": "for循环配合range()可以用于固定次数循环",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "在Python中，字符串是不可变的。",
+    "options": null,
+    "answer": "TRUE",
+    "analysis": "字符串创建后不能直接修改，必须创建新的字符串",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "列表的哪个方法用于在末尾添加元素？",
+    "options": "[\"A. append()\", \"B. insert()\", \"C. add()\", \"D. push()\"]",
+    "answer": "A",
+    "analysis": "list.append(元素)在列表末尾添加一个元素",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "列表中负数索引-1表示？",
+    "options": "[\"A. \\u6700\\u540e\\u4e00\\u4e2a\\u5143\\u7d20\", \"B. \\u7b2c\\u4e00\\u4e2a\\u5143\\u7d20\", \"C. \\u5012\\u6570\\u7b2c\\u4e8c\\u4e2a\", \"D. \\u65e0\\u6548\\u7d22\\u5f15\"]",
+    "answer": "A",
+    "analysis": "-1表示访问最后一个元素，-2表示倒数第二个",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "获取列表长度的函数是？",
+    "options": "[\"A. len()\", \"B. length()\", \"C. size()\", \"D. count()\"]",
+    "answer": "A",
+    "analysis": "len(列表名)获取列表的数据个数",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "字典使用什么访问值？",
+    "options": "[\"A. \\u952e\\uff08key\\uff09\", \"B. \\u4e0b\\u6807\\u7d22\\u5f15\", \"C. \\u987a\\u5e8f\\u4f4d\\u7f6e\", \"D. \\u6570\\u5b57\"]",
+    "answer": "A",
+    "analysis": "字典通过key获取value，如dict[\"name\"]",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "集合的特点是？",
+    "options": "[\"A. \\u65e0\\u5e8f\\u3001\\u4e0d\\u5141\\u8bb8\\u91cd\\u590d\", \"B. \\u6709\\u5e8f\\u3001\\u5141\\u8bb8\\u91cd\\u590d\", \"C. \\u6709\\u5e8f\\u3001\\u4e0d\\u5141\\u8bb8\\u91cd\\u590d\", \"D. \\u65e0\\u5e8f\\u3001\\u5141\\u8bb8\\u91cd\\u590d\"]",
+    "answer": "A",
+    "analysis": "集合使用{}定义，无序且不允许有重复元素",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "元组和列表的主要区别是？",
+    "options": "[\"A. \\u5143\\u7ec4\\u4e0d\\u53ef\\u53d8\\uff0c\\u5217\\u8868\\u53ef\\u53d8\", \"B. \\u5217\\u8868\\u4e0d\\u53ef\\u53d8\\uff0c\\u5143\\u7ec4\\u53ef\\u53d8\", \"C. \\u4e24\\u8005\\u5b8c\\u5168\\u76f8\\u540c\", \"D. \\u8bed\\u6cd5\\u4e0d\\u540c\\uff0c\\u529f\\u80fd\\u76f8\\u540c\"]",
+    "answer": "A",
+    "analysis": "元组使用()定义，创建后不能修改；列表使用[]定义，可以增删改",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "字符串split()方法的作用是？",
+    "options": "[\"A. \\u628a\\u5b57\\u7b26\\u4e32\\u5207\\u6210\\u5217\\u8868\", \"B. \\u62fc\\u63a5\\u5b57\\u7b26\\u4e32\", \"C. \\u66ff\\u6362\\u5b57\\u7b26\\u4e32\", \"D. \\u67e5\\u627e\\u5b57\\u7b26\\u4e32\"]",
+    "answer": "A",
+    "analysis": "split()把字符串按分隔符切成列表，如\"a,b\".split(\",\")得到[\"a\",\"b\"]",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "字符串join()方法的作用是？",
+    "options": "[\"A. \\u628a\\u5217\\u8868\\u62fc\\u6210\\u5b57\\u7b26\\u4e32\", \"B. \\u5207\\u5272\\u5b57\\u7b26\\u4e32\", \"C. \\u66ff\\u6362\\u5b57\\u7b26\\u4e32\", \"D. \\u590d\\u5236\\u5b57\\u7b26\\u4e32\"]",
+    "answer": "A",
+    "analysis": "join()把列表拼成字符串，如\"-\".join([\"a\",\"b\"])得到\"a-b\"",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "列表切片nums[1:4]的结果包含下标为几的元素？",
+    "options": "[\"A. 1,2,3\", \"B. 1,2,3,4\", \"C. 0,1,2,3\", \"D. 2,3,4\"]",
+    "answer": "A",
+    "analysis": "切片包头不包尾，nums[1:4]获取索引1、2、3的元素",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "列表推导式[x**2 for x in range(1,5)]的结果是？",
+    "options": "[\"A. [1, 4, 9, 16]\", \"B. [0, 1, 4, 9, 16]\", \"C. [2, 4, 6, 8]\", \"D. [1, 2, 3, 4]\"]",
+    "answer": "A",
+    "analysis": "列表推导式对range(1,5)即1,2,3,4进行平方运算，结果[1,4,9,16]",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "isdigit()方法的作用是？",
+    "options": "[\"A. \\u5224\\u65ad\\u5b57\\u7b26\\u4e32\\u662f\\u5426\\u7531\\u6570\\u5b57\\u7ec4\\u6210\", \"B. \\u8f6c\\u6362\\u4e3a\\u6570\\u5b57\", \"C. \\u8ba1\\u7b97\\u4f4d\\u6570\", \"D. \\u6c42\\u548c\"]",
+    "answer": "A",
+    "analysis": "isdigit()判断字符串是否全部由数字组成",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "字典可以通过下标索引访问元素。",
+    "options": null,
+    "answer": "FALSE",
+    "analysis": "字典通过key访问值，不是通过下标索引",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "定义函数使用的关键字是？",
+    "options": "[\"A. def\", \"B. function\", \"C. func\", \"D. define\"]",
+    "answer": "A",
+    "analysis": "Python使用def关键字定义函数",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "函数返回值使用哪个关键字？",
+    "options": "[\"A. return\", \"B. return \", \"C. get\", \"D. output\"]",
+    "answer": "A",
+    "analysis": "使用return关键字返回函数结果",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "如果函数没有return语句，默认返回什么？",
+    "options": "[\"A. None\", \"B. 0\", \"C. \\u7a7a\\u5b57\\u7b26\\u4e32\", \"D. False\"]",
+    "answer": "A",
+    "analysis": "函数如果没有return数据，默认返回值是None",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "在函数内部修改全局变量，需要使用什么关键字？",
+    "options": "[\"A. global\", \"B. local\", \"C. nonlocal\", \"D. static\"]",
+    "answer": "A",
+    "analysis": "在函数内部修改全局变量，需要先使用global声明",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "*args的作用是？",
+    "options": "[\"A. \\u63a5\\u6536\\u591a\\u4f59\\u7684\\u4f4d\\u7f6e\\u53c2\\u6570\\uff0c\\u6253\\u5305\\u6210\\u5143\\u7ec4\", \"B. \\u63a5\\u6536\\u5173\\u952e\\u5b57\\u53c2\\u6570\", \"C. \\u63a5\\u6536\\u6240\\u6709\\u53c2\\u6570\", \"D. \\u8fd4\\u56de\\u53c2\\u6570\\u4e2a\\u6570\"]",
+    "answer": "A",
+    "analysis": "*args接收所有多余的位置参数，打包成元组",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "**kwargs的作用是？",
+    "options": "[\"A. \\u63a5\\u6536\\u591a\\u4f59\\u7684\\u5173\\u952e\\u5b57\\u53c2\\u6570\\uff0c\\u6253\\u5305\\u6210\\u5b57\\u5178\", \"B. \\u63a5\\u6536\\u4f4d\\u7f6e\\u53c2\\u6570\", \"C. \\u8fd4\\u56de\\u5173\\u952e\\u5b57\\u53c2\\u6570\", \"D. \\u4f20\\u9012\\u53c2\\u6570\"]",
+    "answer": "A",
+    "analysis": "**kwargs接收所有多余的关键字参数，打包成字典",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "lambda表达式的语法是？",
+    "options": "[\"A. lambda \\u53c2\\u6570: \\u7ed3\\u679c\", \"B. lambda (\\u53c2\\u6570) {\\u7ed3\\u679c}\", \"C. lambda \\u53c2\\u6570 -> \\u7ed3\\u679c\", \"D. lambda (\\u53c2\\u6570) -> \\u7ed3\\u679c\"]",
+    "answer": "A",
+    "analysis": "lambda表达式语法：lambda 参数: 结果，只能有一行代码",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python关键字参数的特点是？",
+    "options": "[\"A. \\u6307\\u540d\\u9053\\u59d3\\uff0c\\u987a\\u5e8f\\u53ef\\u4e71\", \"B. \\u5fc5\\u987b\\u6309\\u987a\\u5e8f\", \"C. \\u4e0d\\u80fd\\u6709\\u9ed8\\u8ba4\\u503c\", \"D. \\u53ea\\u80fd\\u662f\\u6570\\u5b57\"]",
+    "answer": "A",
+    "analysis": "关键字参数通过参数名指定，顺序可以任意",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "默认参数必须放在位置参数前面。",
+    "options": null,
+    "answer": "FALSE",
+    "analysis": "默认参数通常放在最后，位置参数在前",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "打开文件进行写入操作，使用什么模式？",
+    "options": "[\"A. w\", \"B. r\", \"C. a\", \"D. x\"]",
+    "answer": "A",
+    "analysis": "\"w\"模式是写入模式，文件不存在则创建，存在则清空内容",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "打开文件进行追加写入，使用什么模式？",
+    "options": "[\"A. a\", \"B. w\", \"C. r\", \"D. x\"]",
+    "answer": "A",
+    "analysis": "\"a\"模式是追加模式，在文件末尾追加内容",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "文件读取操作的推荐写法是？",
+    "options": "[\"A. with open() as f:\", \"B. open()\\u540e\\u624b\\u52a8close()\", \"C. \\u53ea\\u7528open()\", \"D. readline()\"]",
+    "answer": "A",
+    "analysis": "with open()是安全的写法，文件会自动关闭",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "JSON.dumps()的作用是？",
+    "options": "[\"A. \\u628aPython\\u6570\\u636e\\u8f6c\\u6362\\u4e3aJSON\\u5b57\\u7b26\\u4e32\", \"B. \\u8bfb\\u53d6JSON\\u6587\\u4ef6\", \"C. \\u89e3\\u6790JSON\", \"D. \\u5199\\u5165\\u6587\\u4ef6\"]",
+    "answer": "A",
+    "analysis": "json.dumps()将Python数据序列化为JSON字符串",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "JSON.loads()的作用是？",
+    "options": "[\"A. \\u628aJSON\\u5b57\\u7b26\\u4e32\\u8f6c\\u6362\\u4e3aPython\\u6570\\u636e\", \"B. \\u5199\\u5165JSON\", \"C. \\u521b\\u5efaJSON\", \"D. \\u4fdd\\u5b58\\u6587\\u4ef6\"]",
+    "answer": "A",
+    "analysis": "json.loads()将JSON字符串反序列化为Python数据",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "异常处理的语法是？",
+    "options": "[\"A. try...except\", \"B. if...else\", \"C. try...catch\", \"D. error...handle\"]",
+    "answer": "A",
+    "analysis": "Python使用try...except进行异常处理",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "FileNotFoundError异常表示什么？",
+    "options": "[\"A. \\u6587\\u4ef6\\u4e0d\\u5b58\\u5728\", \"B. \\u6587\\u4ef6\\u5df2\\u5b58\\u5728\", \"C. \\u6587\\u4ef6\\u635f\\u574f\", \"D. \\u6743\\u9650\\u4e0d\\u8db3\"]",
+    "answer": "A",
+    "analysis": "FileNotFoundError表示试图读取一个不存在的文件",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "相对路径中../表示什么？",
+    "options": "[\"A. \\u4e0a\\u4e00\\u7ea7\\u76ee\\u5f55\", \"B. \\u5f53\\u524d\\u76ee\\u5f55\", \"C. \\u6839\\u76ee\\u5f55\", \"D. \\u5b50\\u76ee\\u5f55\"]",
+    "answer": "A",
+    "analysis": "../表示上一级目录，./表示当前目录",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "用w模式打开已有内容的文件，原内容会被清空。",
+    "options": null,
+    "answer": "TRUE",
+    "analysis": "w模式会清空文件原有内容后从头写入",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "类是什么？",
+    "options": "[\"A. \\u5bf9\\u8c61\\u7684\\u6a21\\u677f/\\u56fe\\u7eb8\", \"B. \\u5177\\u4f53\\u7684\\u5bf9\\u8c61\", \"C. \\u51fd\\u6570\\u7684\\u96c6\\u5408\", \"D. \\u6570\\u636e\\u7c7b\\u578b\"]",
+    "answer": "A",
+    "analysis": "类是对象的模板，定义对象的属性和方法",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "创建类实例（对象）使用的是？",
+    "options": "[\"A. \\u7c7b\\u540d()\", \"B. new \\u7c7b\\u540d\", \"C. create \\u7c7b\\u540d\", \"D. init \\u7c7b\\u540d\"]",
+    "answer": "A",
+    "analysis": "使用类名()创建类的实例对象",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "__init__方法的作用是？",
+    "options": "[\"A. \\u521d\\u59cb\\u5316\\u5bf9\\u8c61\\u5c5e\\u6027\\uff08\\u6784\\u9020\\u51fd\\u6570\\uff09\", \"B. \\u9500\\u6bc1\\u5bf9\\u8c61\", \"C. \\u6253\\u5370\\u5bf9\\u8c61\", \"D. \\u8fd4\\u56de\\u503c\"]",
+    "answer": "A",
+    "analysis": "__init__在创建对象时自动调用，用于初始化属性",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "self关键字代表什么？",
+    "options": "[\"A. \\u5f53\\u524d\\u5bf9\\u8c61\\u81ea\\u5df1\", \"B. \\u7c7b\\u672c\\u8eab\", \"C. \\u5168\\u5c40\\u5bf9\\u8c61\", \"D. \\u7236\\u7c7b\\u5bf9\\u8c61\"]",
+    "answer": "A",
+    "analysis": "self代表当前对象自己，用于访问自己的属性和方法",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "__str__方法的作用是？",
+    "options": "[\"A. \\u5b9a\\u4e49print\\u5bf9\\u8c61\\u7684\\u8f93\\u51fa\\u683c\\u5f0f\", \"B. \\u521d\\u59cb\\u5316\\u5bf9\\u8c61\", \"C. \\u9500\\u6bc1\\u5bf9\\u8c61\", \"D. \\u6bd4\\u8f83\\u5bf9\\u8c61\"]",
+    "answer": "A",
+    "analysis": "__str__定义print对象时的输出格式，必须返回字符串",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "私有属性的命名规范是？",
+    "options": "[\"A. \\u4ee5\\u53cc\\u4e0b\\u5212\\u7ebf__\\u5f00\\u5934\", \"B. \\u4ee5\\u5355\\u4e0b\\u5212\\u7ebf_\\u5f00\\u5934\", \"C. \\u5168\\u5927\\u5199\", \"D. \\u65e0\\u7279\\u6b8a\\u8981\\u6c42\"]",
+    "answer": "A",
+    "analysis": "私有属性以双下划线__开头，外部无法直接访问",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "继承的语法是？",
+    "options": "[\"A. class \\u5b50\\u7c7b(\\u7236\\u7c7b):\", \"B. class \\u5b50\\u7c7b extends \\u7236\\u7c7b\", \"C. class \\u5b50\\u7c7b:inherit \\u7236\\u7c7b\", \"D. class \\u5b50\\u7c7b from \\u7236\\u7c7b\"]",
+    "answer": "A",
+    "analysis": "Python继承语法：class 子类(父类):",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "如果类定义时不指定父类，默认继承自？",
+    "options": "[\"A. object\", \"B. None\", \"C. Base\", \"D. Parent\"]",
+    "answer": "A",
+    "analysis": "Python3中，如果不写继承，默认继承自object（所有类的根类）",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "super()函数的作用是？",
+    "options": "[\"A. \\u8c03\\u7528\\u7236\\u7c7b\\u7684\\u65b9\\u6cd5\", \"B. \\u521b\\u5efa\\u7236\\u7c7b\\u5bf9\\u8c61\", \"C. \\u83b7\\u53d6\\u7236\\u7c7b\\u540d\\u79f0\", \"D. \\u5224\\u65ad\\u7ee7\\u627f\\u5173\\u7cfb\"]",
+    "answer": "A",
+    "analysis": "super()可以显式调用父类的方法",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "多态的概念是？",
+    "options": "[\"A. \\u4e0d\\u540c\\u5bf9\\u8c61\\u5bf9\\u540c\\u4e00\\u65b9\\u6cd5\\u505a\\u51fa\\u4e0d\\u540c\\u54cd\\u5e94\", \"B. \\u591a\\u4e2a\\u65b9\\u6cd5\\u540c\\u540d\", \"C. \\u4e00\\u4e2a\\u5bf9\\u8c61\\u6709\\u591a\\u79cd\\u5f62\\u6001\", \"D. \\u7ee7\\u627f\\u591a\\u4e2a\\u7c7b\"]",
+    "answer": "A",
+    "analysis": "多态指不同对象对同一方法做出不同响应",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "类属性和实例属性的区别是？",
+    "options": "[\"A. \\u7c7b\\u5c5e\\u6027\\u88ab\\u6240\\u6709\\u5bf9\\u8c61\\u5171\\u4eab\\uff0c\\u5b9e\\u4f8b\\u5c5e\\u6027\\u6bcf\\u4e2a\\u5bf9\\u8c61\\u72ec\\u6709\", \"B. \\u4e24\\u8005\\u5b8c\\u5168\\u76f8\\u540c\", \"C. \\u5b9e\\u4f8b\\u5c5e\\u6027\\u662f\\u7c7b\\u5c5e\\u6027\\u7684\\u4e00\\u90e8\\u5206\", \"D. \\u65e0\\u533a\\u522b\"]",
+    "answer": "A",
+    "analysis": "类属性属于类，所有对象共享；实例属性属于单个对象",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "在Python中，self指向类本身。",
+    "options": null,
+    "answer": "FALSE",
+    "analysis": "self指向类的实例对象，而不是类本身",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "闭包是指什么？",
+    "options": "[\"A. \\u5185\\u5c42\\u51fd\\u6570\\u5f15\\u7528\\u5916\\u5c42\\u51fd\\u6570\\u7684\\u53d8\\u91cf\", \"B. \\u5173\\u95ed\\u51fd\\u6570\", \"C. \\u7c7b\\u7684\\u79c1\\u6709\\u65b9\\u6cd5\", \"D. \\u5f02\\u5e38\\u5904\\u7406\"]",
+    "answer": "A",
+    "analysis": "闭包是指内层函数引用了外层函数的变量，形成一个封闭的环境",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "装饰器的作用是？",
+    "options": "[\"A. \\u5728\\u4e0d\\u4fee\\u6539\\u539f\\u51fd\\u6570\\u7684\\u60c5\\u51b5\\u4e0b\\u589e\\u52a0\\u529f\\u80fd\", \"B. \\u5220\\u9664\\u51fd\\u6570\", \"C. \\u590d\\u5236\\u51fd\\u6570\", \"D. \\u91cd\\u547d\\u540d\\u51fd\\u6570\"]",
+    "answer": "A",
+    "analysis": "装饰器可以在不修改原函数代码的情况下增加新功能",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "生成器和迭代器的主要区别是？",
+    "options": "[\"A. \\u751f\\u6210\\u5668\\u4f7f\\u7528yield\\uff0c\\u8fed\\u4ee3\\u5668\\u4f7f\\u7528iter()\", \"B. \\u4e24\\u8005\\u5b8c\\u5168\\u76f8\\u540c\", \"C. \\u8fed\\u4ee3\\u5668\\u66f4\\u8282\\u7701\\u5185\\u5b58\", \"D. \\u751f\\u6210\\u5668\\u4e0d\\u80fd\\u8fed\\u4ee3\"]",
+    "answer": "A",
+    "analysis": "生成器使用yield返回，迭代器使用iter()，生成器是特殊的迭代器",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "深拷贝和浅拷贝的区别是？",
+    "options": "[\"A. \\u6df1\\u62f7\\u8d1d\\u590d\\u5236\\u6240\\u6709\\u5c42\\uff0c\\u6d45\\u62f7\\u8d1d\\u53ea\\u590d\\u5236\\u7b2c\\u4e00\\u5c42\", \"B. \\u4e24\\u8005\\u5b8c\\u5168\\u76f8\\u540c\", \"C. \\u6d45\\u62f7\\u8d1d\\u66f4\\u8282\\u7701\\u5185\\u5b58\", \"D. \\u65e0\\u533a\\u522b\"]",
+    "answer": "A",
+    "analysis": "深拷贝递归复制所有层，浅拷贝只复制第一层引用",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "模块导入使用哪个关键字？",
+    "options": "[\"A. import\", \"B. include\", \"C. require\", \"D. using\"]",
+    "answer": "A",
+    "analysis": "Python使用import关键字导入模块",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "from...import...的作用是？",
+    "options": "[\"A. \\u4ece\\u6a21\\u5757\\u5bfc\\u5165\\u6307\\u5b9a\\u5185\\u5bb9\", \"B. \\u5bfc\\u51fa\\u6a21\\u5757\", \"C. \\u521b\\u5efa\\u6a21\\u5757\", \"D. \\u5220\\u9664\\u6a21\\u5757\"]",
+    "answer": "A",
+    "analysis": "from...import...可以从模块导入特定函数或变量",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下哪个是形成闭包的必要条件？",
+    "options": "[\"A. \\u51fd\\u6570\\u5fc5\\u987b\\u8fd4\\u56de\\u6570\\u503c\", \"B. \\u5d4c\\u5957\\u51fd\\u6570\\u3001\\u5185\\u90e8\\u51fd\\u6570\\u5f15\\u7528\\u5916\\u90e8\\u51fd\\u6570\\u53d8\\u91cf\\u3001\\u5916\\u90e8\\u51fd\\u6570\\u8fd4\\u56de\\u5185\\u90e8\\u51fd\\u6570\\u540d\", \"C. \\u5fc5\\u987b\\u4f7f\\u7528global\\u5173\\u952e\\u5b57\", \"D. \\u5185\\u90e8\\u51fd\\u6570\\u5fc5\\u987b\\u5b9a\\u4e49\\u5728\\u7c7b\\u4e2d\"]",
+    "answer": "B",
+    "analysis": "闭包的三个必要条件：1.嵌套函数 2.内部函数引用外部函数的变量 3.外部函数返回内部函数名",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中判断一个函数是否是闭包，可以通过查看该函数的哪个魔法属性？",
+    "options": "[\"A. __name__\", \"B. __closure__\", \"C. __code__\", \"D. __defaults__\"]",
+    "answer": "B",
+    "analysis": "函数的__closure__属性可以判断是否是闭包，如果有值则是闭包，None则不是",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "装饰器的本质是什么？",
+    "options": "[\"A. \\u4e00\\u79cd\\u7279\\u6b8a\\u7684\\u6570\\u636e\\u7c7b\\u578b\", \"B. \\u5229\\u7528\\u95ed\\u5305\\u5b9e\\u73b0\\u7684\\u51fd\\u6570\\u88c5\\u9970\\u6a21\\u5f0f\", \"C. \\u7c7b\\u7684\\u53e6\\u4e00\\u79cd\\u5199\\u6cd5\", \"D. \\u5f02\\u6b65\\u7f16\\u7a0b\\u7684\\u4e00\\u79cd\\u65b9\\u5f0f\"]",
+    "answer": "B",
+    "analysis": "装饰器本质上就是利用了闭包实现，在不修改原函数代码的情况下动态增加功能",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "代码执行结果是什么？\ndef login(fn):\n    def inner(*args, **kwargs):\n        print('正在登录中.....')\n        fn(*args, **kwargs)\n    return inner\n\n@login\ndef pay(money):\n    print(f'支付了{money}元')\n\npay(100)",
+    "options": "[\"A. \\u652f\\u4ed8\\u4e86100\\u5143\", \"B. \\u6b63\\u5728\\u767b\\u5f55\\u4e2d.....\\\\n\\u652f\\u4ed8\\u4e86100\\u5143\", \"C. \\u6b63\\u5728\\u767b\\u5f55\\u4e2d.....\", \"D. \\u62a5\\u9519\"]",
+    "answer": "B",
+    "analysis": "@login装饰器会在执行pay函数前先执行inner函数，打印登录提示后再调用原函数",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "闭包可以让局部变量长生不老，即使外部函数已经执行完毕。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "闭包的核心作用之一就是让局部变量持久化，不被垃圾回收",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "装饰器只能装饰函数，不能装饰类方法。",
+    "options": null,
+    "answer": "错误",
+    "analysis": "装饰器同样可以装饰类方法，只要方法符合被装饰的条件",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "迭代器必须实现哪两个方法？",
+    "options": "[\"A. __iter__ \\u548c __next__\", \"B. __enter__ \\u548c __exit__\", \"C. __str__ \\u548c __repr__\", \"D. __init__ \\u548c __del__\"]",
+    "answer": "A",
+    "analysis": "迭代器协议要求实现__iter__方法返回自身，和__next__方法返回下一个元素",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "生成器函数和普通函数最大的区别是什么？",
+    "options": "[\"A. \\u751f\\u6210\\u5668\\u51fd\\u6570\\u6267\\u884c\\u66f4\\u5feb\", \"B. \\u751f\\u6210\\u5668\\u51fd\\u6570\\u5305\\u542byield\\u8868\\u8fbe\\u5f0f\\uff0c\\u8c03\\u7528\\u4e0d\\u7acb\\u5373\\u6267\\u884c\", \"C. \\u751f\\u6210\\u5668\\u51fd\\u6570\\u5fc5\\u987b\\u8fd4\\u56de\\u5217\\u8868\", \"D. \\u751f\\u6210\\u5668\\u51fd\\u6570\\u53ea\\u80fd\\u5904\\u7406\\u6570\\u503c\"]",
+    "answer": "B",
+    "analysis": "生成器函数体中包含yield，调用时不会立即执行，只返回生成器对象，需要用next()触发执行",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码的输出是什么？\ndef my_gen():\n    yield 1\n    yield 2\n    yield 3\n\ng = my_gen()\nprint(next(g))\nprint(next(g))",
+    "options": "[\"A. 1 2\", \"B. [1,2,3]\", \"C. 3\", \"D. \\u62a5\\u9519\"]",
+    "answer": "A",
+    "analysis": "调用my_gen()返回生成器对象，next()每次从yield处暂停并返回值，连续调用会依次返回1和2",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "关于生成器和列表处理大型数据的说法，正确的是？",
+    "options": "[\"A. \\u5217\\u8868\\u66f4\\u9002\\u5408\\uff0c\\u56e0\\u4e3a\\u67e5\\u8be2\\u901f\\u5ea6\\u5feb\", \"B. \\u751f\\u6210\\u5668\\u66f4\\u9002\\u5408\\uff0c\\u56e0\\u4e3a\\u9010\\u4e2a\\u8ba1\\u7b97\\u4e0d\\u5360\\u5185\\u5b58\", \"C. \\u4e24\\u8005\\u4e00\\u6837\\uff0c\\u6ca1\\u6709\\u533a\\u522b\", \"D. \\u5217\\u8868\\u53ef\\u4ee5\\u5904\\u7406\\u65e0\\u9650\\u6570\\u636e\"]",
+    "answer": "B",
+    "analysis": "生成器通过计算规则得到每个数据，不一次性加载入内存，适合处理大型数据和无限数据流",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "生成器的本质也是一种迭代器。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "生成器实现了迭代器协议（__iter__和__next__），所以生成器本质上是迭代器的一种",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "yield表达式会使函数变成生成器，调用函数时会立即执行函数体中的代码。",
+    "options": null,
+    "answer": "错误",
+    "analysis": "函数体中包含yield时，调用函数不会立即执行，只返回一个生成器对象",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "代码执行后，a的值是什么？\nimport copy\na = [1, 2, [3, 4]]\nb = a.copy()\nb[2][0] = 999\nprint(a)",
+    "options": "[\"A. [1, 2, [3, 4]]\", \"B. [1, 2, [999, 4]]\", \"C. [999, 2, [3, 4]]\", \"D. \\u62a5\\u9519\"]",
+    "answer": "B",
+    "analysis": "copy()是浅拷贝，只复制最外层容器，内部元素仍然是引用，所以修改b的内层列表会影响a",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "代码执行后，c的值是什么？\nimport copy\nc = [1, 2, [3, 4]]\nd = copy.deepcopy(c)\nd[2][0] = 888\nprint(c)",
+    "options": "[\"A. [1, 2, [888, 4]]\", \"B. [1, 2, [3, 4]]\", \"C. [1, 2, [888, 4]]\", \"D. [888, 2, [3, 4]]\"]",
+    "answer": "B",
+    "analysis": "deepcopy是深拷贝，完全递归复制，修改d的内层列表不会影响原对象c",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下哪种情况深拷贝是必须的？",
+    "options": "[\"A. \\u62f7\\u8d1d\\u7b80\\u5355\\u6570\\u5b57\", \"B. \\u62f7\\u8d1d\\u5b57\\u7b26\\u4e32\", \"C. \\u62f7\\u8d1d\\u5305\\u542b\\u5d4c\\u5957\\u53ef\\u53d8\\u5bf9\\u8c61\\u7684\\u6570\\u636e\\u7ed3\\u6784\", \"D. \\u62f7\\u8d1d\\u5143\\u7ec4\"]",
+    "answer": "C",
+    "analysis": "当数据结构包含嵌套的可变对象（列表、字典）时，如果需要完全独立复制，互不影响，应使用深拷贝",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "直接赋值 b = a，两个变量指向同一个对象，修改其中一个会影响另一个。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "直接赋值只是让两个变量名指向同一个内存地址，不是真正的拷贝",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "不可变数据类型（如tuple）不需要深拷贝，因为它们不可修改。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "不可变类型在修改时会创建新对象，所以不存在引用共享导致意外修改的问题",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "代码执行结果是什么？\nclass Student:\n    school_name = '沃林'\n    instance_count = 0\n    \n    def __init__(self, name):\n        self.name = name\n        Student.instance_count += 1\n\ns1 = Student('zs')\ns2 = Student('ls')\nprint(Student.instance_count)",
+    "options": "[\"A. 0\", \"B. 1\", \"C. 2\", \"D. \\u62a5\\u9519\"]",
+    "answer": "C",
+    "analysis": "每次创建实例都会执行__init__，类属性instance_count递增，创建两个实例后值为2",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "类属性和实例属性的区别是什么？",
+    "options": "[\"A. \\u6ca1\\u6709\\u533a\\u522b\", \"B. \\u7c7b\\u5c5e\\u6027\\u6240\\u6709\\u5bf9\\u8c61\\u5171\\u4eab\\uff0c\\u901a\\u8fc7\\u7c7b\\u540d\\u4fee\\u6539\\uff1b\\u5b9e\\u4f8b\\u5c5e\\u6027\\u6bcf\\u4e2a\\u5bf9\\u8c61\\u72ec\\u7acb\", \"C. \\u5b9e\\u4f8b\\u5c5e\\u6027\\u4e0d\\u80fd\\u4fee\\u6539\", \"D. \\u7c7b\\u5c5e\\u6027\\u4e0d\\u80fd\\u88ab\\u8bbf\\u95ee\"]",
+    "answer": "B",
+    "analysis": "类属性是所有对象共享的数据，只能通过类名修改；实例属性是每个对象独立拥有的",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "代码执行结果是什么？\nclass Test:\n    @classmethod\n    def show(cls):\n        print(cls.__name__)\n\nTest.show()",
+    "options": "[\"A. Test\", \"B. object\", \"C. cls\", \"D. \\u62a5\\u9519\"]",
+    "answer": "A",
+    "analysis": "@classmethod装饰的方法会自动接收类作为第一个参数，cls.__name__返回类名'Test'",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "类方法必须通过类名调用，不能通过实例对象调用。",
+    "options": null,
+    "answer": "错误",
+    "analysis": "类方法既可以通过类名调用，也可以通过实例对象调用（此时cls仍指向类）",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "通过实例对象可以直接修改类属性的值。",
+    "options": null,
+    "answer": "错误",
+    "analysis": "通过实例对象修改类属性会创建新的实例属性，而不是修改类属性本身",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "__del__方法在什么时候被调用？",
+    "options": "[\"A. \\u5bf9\\u8c61\\u521b\\u5efa\\u65f6\", \"B. \\u5bf9\\u8c61\\u88ab\\u9500\\u6bc1\\u524d\", \"C. \\u6bcf\\u6b21\\u8bbf\\u95ee\\u5bf9\\u8c61\\u65f6\", \"D. \\u7a0b\\u5e8f\\u7ed3\\u675f\\u65f6\"]",
+    "answer": "B",
+    "analysis": "__del__是析构方法，在对象即将被销毁（引用计数为0）时自动调用",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中使用什么方式判断对象是否需要被回收？",
+    "options": "[\"A. \\u6807\\u8bb0-\\u6e05\\u9664\\u7b97\\u6cd5\", \"B. \\u5f15\\u7528\\u8ba1\\u6570\", \"C. \\u5206\\u4ee3\\u6536\\u96c6\", \"D. \\u624b\\u52a8\\u91ca\\u653e\"]",
+    "answer": "B",
+    "analysis": "Python使用引用计数方式判断对象是否需要销毁，当引用计数为0时立即回收",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "__del__方法的典型应用场景是什么？",
+    "options": "[\"A. \\u521d\\u59cb\\u5316\\u5bf9\\u8c61\\u5c5e\\u6027\", \"B. \\u91ca\\u653e\\u975e\\u5185\\u5b58\\u8d44\\u6e90\\uff08\\u5982\\u5173\\u95ed\\u6587\\u4ef6\\u3001\\u6570\\u636e\\u5e93\\u8fde\\u63a5\\uff09\", \"C. \\u6253\\u5370\\u5bf9\\u8c61\\u4fe1\\u606f\", \"D. \\u521b\\u5efa\\u65b0\\u5bf9\\u8c61\"]",
+    "answer": "B",
+    "analysis": "__del__常用于释放非内存资源，因为这些资源需要及时关闭避免泄漏，内存资源由垃圾回收器自动处理",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "如果对象的引用计数变为0，Python会立即销毁该对象。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "引用计数为0时，对象会立即被销毁并回收内存，这是Python与其他使用标记-清除的语言的区别",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "代码执行结果是什么？\nclass A:\n    def show(self): return 'A'\n\nclass B(A):\n    def show(self): return 'B'\n\nclass C(A):\n    def show(self): return 'C'\n\nclass D(B, C):\n    pass\n\nd = D()\nprint(d.show())",
+    "options": "[\"A. A\", \"B. B\", \"C. C\", \"D. \\u62a5\\u9519\"]",
+    "answer": "B",
+    "analysis": "D继承B和C，MRO顺序从左到右，先子后父，所以优先使用B的show方法",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "如何查看一个类的MRO（方法解析顺序）？",
+    "options": "[\"A. \\u7c7b\\u540d.mro()\", \"B. \\u7c7b\\u540d.__parents__\", \"C. \\u7c7b\\u540d.inherit()\", \"D. \\u7c7b\\u540d.order()\"]",
+    "answer": "A",
+    "analysis": "通过 类名.mro() 或 类名.__mro__ 可以查看该类的继承顺序",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "在多继承中，如果多个父类有同名方法，Python按照从左到右的顺序在MRO列表中查找。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "MRO遵循C3线性化算法，查找顺序是从左到右，先查找子类，再查找父类",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "多态的核心概念是什么？",
+    "options": "[\"A. \\u540c\\u4e00\\u4e2a\\u7c7b\\u53ef\\u4ee5\\u521b\\u5efa\\u591a\\u4e2a\\u5bf9\\u8c61\", \"B. \\u540c\\u4e00\\u4e2a\\u884c\\u4e3a\\uff0c\\u4e0d\\u540c\\u5bf9\\u8c61\\u505a\\u51fa\\u4e0d\\u540c\\u54cd\\u5e94\", \"C. \\u4e00\\u4e2a\\u7c7b\\u53ef\\u4ee5\\u7ee7\\u627f\\u591a\\u4e2a\\u7236\\u7c7b\", \"D. \\u5bf9\\u8c61\\u53ef\\u4ee5\\u52a8\\u6001\\u6dfb\\u52a0\\u5c5e\\u6027\"]",
+    "answer": "B",
+    "analysis": "多态指不同对象对同一方法做出不同响应，例如动物都叫，但猫喵喵、狗汪汪",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中私有属性的命名规范是什么？",
+    "options": "[\"A. _\\u5c5e\\u6027\\u540d\", \"B. __\\u5c5e\\u6027\\u540d\", \"C. ___\\u5c5e\\u6027\\u540d\", \"D. private_\\u5c5e\\u6027\\u540d\"]",
+    "answer": "B",
+    "analysis": "Python中以双下划线__开头的属性会被解释器进行名字改写，实现类似private的效果",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码执行后，obj.__money的值是多少？\\nclass BankCard:\\n    def __init__(self):\\n        self.__money = 100\\ncard = BankCard()\\ncard.__money = 999",
+    "options": "[\"A. 100\", \"B. 999\", \"C. \\u62a5\\u9519\", \"D. None\"]",
+    "answer": "A",
+    "analysis": "__money被改名为_BankCard__money，外部设置的__money实际上是创建了新属性，不影响原私有属性",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "super()函数的作用是什么？",
+    "options": "[\"A. \\u521b\\u5efa\\u7236\\u7c7b\\u5bf9\\u8c61\", \"B. \\u8c03\\u7528\\u7236\\u7c7b\\u7684\\u65b9\\u6cd5\", \"C. \\u9500\\u6bc1\\u5b50\\u7c7b\\u5bf9\\u8c61\", \"D. \\u5b9a\\u4e49\\u7236\\u7c7b\"]",
+    "answer": "B",
+    "analysis": "super()返回父类对象，可以显式调用父类的方法，常用于在子类中扩展父类功能",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "在Python中，所有类如果不写继承父类，默认都继承自object。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "Python3默认使用新式类，所有类都直接或间接继承object，这就是为什么任何类都有__str__、__dict__等方法",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "封装就是将属性和方法名字前加双下划线，使其无法被外部访问。",
+    "options": null,
+    "answer": "错误",
+    "analysis": "封装的核心是将属性和方法放到类内部，通过公开接口控制访问，而不是简单阻止访问",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中一个.py文件被称为什么？",
+    "options": "[\"A. \\u5305\", \"B. \\u6a21\\u5757\", \"C. \\u7c7b\\u5e93\", \"D. \\u51fd\\u6570\"]",
+    "answer": "B",
+    "analysis": "一个.py文件就是一个模块，可以包含变量、函数、类等",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "包和普通文件夹的区别是什么？",
+    "options": "[\"A. \\u5305\\u540d\\u66f4\\u957f\", \"B. \\u5305\\u5305\\u542b__init__.py\\u6587\\u4ef6\", \"C. \\u5305\\u4e0d\\u80fd\\u5bfc\\u5165\", \"D. \\u5305\\u53ea\\u80fd\\u653e\\u4e00\\u4e2a\\u6a21\\u5757\"]",
+    "answer": "B",
+    "analysis": "带__init__.py的文件夹才是Python包，__init__.py可以控制包的导出行为",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "__all__变量的作用是什么？",
+    "options": "[\"A. \\u5b9a\\u4e49\\u5305\\u7684\\u7248\\u672c\", \"B. \\u63a7\\u5236from pkg import *\\u65f6\\u80fd\\u5bfc\\u5165\\u7684\\u5185\\u5bb9\", \"C. \\u5bfc\\u5165\\u6240\\u6709\\u6a21\\u5757\", \"D. \\u5bfc\\u51fa\\u6240\\u6709\\u7c7b\"]",
+    "answer": "B",
+    "analysis": "__all__在__init__.py中设置，控制from pkg import *时能导入的成员",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "__name__变量在什么情况下等于'__main__'？",
+    "options": "[\"A. \\u4f5c\\u4e3a\\u6a21\\u5757\\u5bfc\\u5165\\u65f6\", \"B. \\u4f5c\\u4e3a\\u4e3b\\u7a0b\\u5e8f\\u76f4\\u63a5\\u8fd0\\u884c\\u65f6\", \"C. \\u6c38\\u8fdc\\u4e0d\\u7b49\\u4e8e\", \"D. \\u5bfc\\u5165\\u65f6\\u548c\\u8fd0\\u884c\\u65f6\\u90fd\\u7b49\\u4e8e\"]",
+    "answer": "B",
+    "analysis": "__name__作为主程序运行时得到__main__，作为模块导入时得到模块名",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "导入模块时，模块里的代码会立即执行。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "import语句会执行被导入模块的顶层代码，这是需要注意避免在模块顶层执行耗时操作的原因",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "from 模块 import * 可以导入该模块的所有内容。",
+    "options": null,
+    "answer": "错误",
+    "analysis": "import * 只能导入模块中不在_开头的成员，以及__all__列表中定义的成员",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以'w'模式打开一个已有内容的文件，会发生什么？",
+    "options": "[\"A. \\u8ffd\\u52a0\\u5185\\u5bb9\", \"B. \\u62a5\\u9519\", \"C. \\u6e05\\u7a7a\\u539f\\u6709\\u5185\\u5bb9\", \"D. \\u8df3\\u8fc7\"]",
+    "answer": "C",
+    "analysis": "'w'模式会清空文件原有内容，从头开始写入，使用时需注意",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "JSON和Python字典的区别是什么？",
+    "options": "[\"A. \\u6ca1\\u6709\\u533a\\u522b\", \"B. JSON\\u662f\\u5b57\\u7b26\\u4e32\\uff0c\\u5b57\\u5178\\u662fPython\\u6570\\u636e\\u7c7b\\u578b\", \"C. JSON\\u53ea\\u80fd\\u5b58\\u6570\\u5b57\", \"D. \\u5b57\\u5178\\u53ea\\u80fd\\u5b58\\u5b57\\u7b26\\u4e32\"]",
+    "answer": "B",
+    "analysis": "JSON本质上是字符串格式，用于跨语言数据交换；字典是Python的内存数据结构",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "json.dumps()和json.loads()的作用分别是？",
+    "options": "[\"A. dumps\\u662f\\u53cd\\u5e8f\\u5217\\u5316\\uff0cloads\\u662f\\u5e8f\\u5217\\u5316\", \"B. dumps\\u662f\\u5e8f\\u5217\\u5316\\uff0cloads\\u662f\\u53cd\\u5e8f\\u5217\\u5316\", \"C. \\u90fd\\u662f\\u5e8f\\u5217\\u5316\", \"D. \\u90fd\\u662f\\u53cd\\u5e8f\\u5217\\u5316\"]",
+    "answer": "B",
+    "analysis": "dumps(序列化)将Python对象转JSON字符串，loads(反序列化)将JSON字符串转Python对象",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "使用with open语句可以确保文件被正确关闭，即使中间代码出错。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "with语句会在离开代码块时自动调用__exit__关闭文件，避免忘记close()导致的资源泄漏",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "'r+'模式和'w+'模式的主要区别是'r+'不会清空文件，'w+'会清空文件。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "'r+'要求文件必须存在且不清空，'w+'文件不存在则创建，存在则清空",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "try...except...else...finally结构中，else子句在什么时候执行？",
+    "options": "[\"A. \\u4efb\\u4f55\\u65f6\\u5019\", \"B. except\\u6355\\u83b7\\u5230\\u5f02\\u5e38\\u65f6\", \"C. try\\u5757\\u6ca1\\u6709\\u53d1\\u751f\\u5f02\\u5e38\\u65f6\", \"D. except\\u6ca1\\u6709\\u6355\\u83b7\\u5230\\u5f02\\u5e38\\u65f6\"]",
+    "answer": "C",
+    "analysis": "else子句只在try块正常执行完毕（没有发生异常）时执行",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "try...except...finally结构中，finally子句在什么时候执行？",
+    "options": "[\"A. \\u53ea\\u6709try\\u5757\\u6267\\u884c\\u65f6\", \"B. \\u53ea\\u6709except\\u5757\\u6267\\u884c\\u65f6\", \"C. \\u4e0d\\u7ba1\\u6709\\u6ca1\\u6709\\u5f02\\u5e38\\u90fd\\u4f1a\\u6267\\u884c\", \"D. \\u53ea\\u6709\\u7a0b\\u5e8f\\u7ed3\\u675f\\u65f6\"]",
+    "answer": "C",
+    "analysis": "finally子句无论是否有异常都会执行，常用于释放资源的清理工作",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "代码执行结果是什么？\ntry:\n    print(1/0)\nexcept ZeroDivisionError:\n    print('除数不能为零')\nexcept Exception as e:\n    print('其他错误')",
+    "options": "[\"A. \\u5176\\u4ed6\\u9519\\u8bef\", \"B. \\u9664\\u6570\\u4e0d\\u80fd\\u4e3a\\u96f6\", \"C. \\u62a5\\u9519\", \"D. \\u65e0\\u8f93\\u51fa\"]",
+    "answer": "B",
+    "analysis": "1/0会触发ZeroDivisionError，被第一个匹配的except捕获，打印对应消息",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "捕获异常时，应该先捕获具体异常，再捕获通用异常。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "异常匹配从上到下进行，先捕获具体异常能更精确处理不同错误类型",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\ndef outer(x):\n    def inner(y):\n        return x + y\n    return inner\n\nadd5 = outer(5)\nprint(add5(3))",
+    "options": "[\"A. 3\", \"B. 5\", \"C. 8\", \"D. \\u62a5\\u9519\"]",
+    "answer": "C",
+    "analysis": "outer(5)返回inner函数，add5(3)调用inner，x=5被闭包记住，所以返回5+3=8",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\nclass Parent:\n    def __init__(self):\n        print('Parent init')\n        \nclass Child(Parent):\n    def __init__(self):\n        super().__init__()\n        print('Child init')\n\nChild()",
+    "options": "[\"A. Child init\", \"B. Parent init\\\\nChild init\", \"C. Parent init\", \"D. \\u62a5\\u9519\"]",
+    "answer": "B",
+    "analysis": "子类的__init__中调用super().__init__()显式执行父类的初始化方法，所以两者都会输出",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\ndef count():\n    result = []\n    for i in range(3):\n        def f():\n            return i\n        result.append(f)\n    return result\n\nfs = count()\nprint(fs[0]())",
+    "options": "[\"A. 0\", \"B. 1\", \"C. 2\", \"D. 3\"]",
+    "answer": "C",
+    "analysis": "三个函数都返回i，当循环结束后i=2，所以所有函数都返回2（闭包陷阱）",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\nclass A:\n    x = 1\n    \nclass B(A):\n    pass\n\nclass C(A):\n    pass\n\nB.x = 2\nprint(A.x, B.x, C.x)",
+    "options": "[\"A. 1 2 1\", \"B. 2 2 2\", \"C. 1 1 1\", \"D. \\u62a5\\u9519\"]",
+    "answer": "A",
+    "analysis": "B.x=2创建了B的新实例属性，不影响A和C的类属性x=1",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "列表推导式[func(i) for i in range(3)]和生成器表达式(func(i) for i in range(3))的主要区别是前者返回列表，后者返回生成器对象。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "列表推导式立即生成所有元素到列表，生成器表达式返回迭代器，按需生成元素",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "在类方法中，self代表当前对象；在类方法中，cls代表当前类。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "实例方法的第一个参数是self（当前对象），类方法的第一个参数是cls（当前类）",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "列表的哪个方法可以在指定位置插入元素？",
+    "options": "[\"A. add()\", \"B. insert()\", \"C. append()\", \"D. extend()\"]",
+    "answer": "B",
+    "analysis": "insert(index, element)在指定位置插入元素，append()在末尾添加，extend()扩展多个元素",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "关于列表推导式 [x**2 for x in range(5)]，说法正确的是？",
+    "options": "[\"A. \\u8fd4\\u56de\\u4e00\\u4e2a\\u6570\\u5b57\", \"B. \\u8fd4\\u56de [0, 1, 4, 9, 16]\", \"C. \\u8fd4\\u56de {0, 1, 4, 9, 16}\", \"D. \\u62a5\\u9519\"]",
+    "answer": "B",
+    "analysis": "列表推导式生成列表，[x**2 for x in range(5)]会计算0到4的平方组成列表",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "字典的get()方法和直接用dict[key]访问的区别是？",
+    "options": "[\"A. \\u6ca1\\u6709\\u533a\\u522b\", \"B. get()\\u5728key\\u4e0d\\u5b58\\u5728\\u65f6\\u8fd4\\u56deNone\\u6216\\u9ed8\\u8ba4\\u503c\\uff0c\\u4e0d\\u4f1a\\u62a5\\u9519\", \"C. get()\\u53ea\\u80fd\\u7528\\u4e8e\\u5b57\\u7b26\\u4e32key\", \"D. dict[key]\\u66f4\\u5feb\"]",
+    "answer": "B",
+    "analysis": "get()在key不存在时返回默认值（默认None），而dict[key]会抛出KeyError异常",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\nd = {'a': 1, 'b': 2}\nd.setdefault('c', 3)\nd.setdefault('a', 99)\nprint(d)",
+    "options": "[\"A. {'a': 1, 'b': 2, 'c': 3}\", \"B. {'a': 99, 'b': 2, 'c': 3}\", \"C. {'a': 1, 'b': 2}\", \"D. {'c': 3}\"]",
+    "answer": "A",
+    "analysis": "setdefault()只在key不存在时设置值，已存在的key不会被修改",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "集合（set）中的元素是有序的。",
+    "options": null,
+    "answer": "错误",
+    "analysis": "集合是无序的，不能用索引访问，元素唯一且自动去重",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "字典的keys()、values()、items()方法返回的都是列表。",
+    "options": null,
+    "answer": "错误",
+    "analysis": "在Python3中，这些方法返回的是dict_keys、dict_values、dict_items视图对象，不是列表，但可以转换为列表",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下关于*args和**kwargs的说法，正确的是？",
+    "options": "[\"A. *args\\u63a5\\u6536\\u5173\\u952e\\u5b57\\u53c2\\u6570\\uff0c**kwargs\\u63a5\\u6536\\u4f4d\\u7f6e\\u53c2\\u6570\", \"B. *args\\u63a5\\u6536\\u4f4d\\u7f6e\\u53c2\\u6570\\u5143\\u7ec4\\uff0c**kwargs\\u63a5\\u6536\\u5173\\u952e\\u5b57\\u53c2\\u6570\\u5b57\\u5178\", \"C. \\u4e24\\u8005\\u6ca1\\u6709\\u533a\\u522b\", \"D. \\u53ea\\u80fd\\u4f7f\\u7528\\u5176\\u4e2d\\u4e00\\u4e2a\"]",
+    "answer": "B",
+    "analysis": "*args将多余的位置参数收集为元组，**kwargs将关键字参数收集为字典",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码执行结果是什么？\ndef func(a, b=10, *args, c=20, **kwargs):\n    print(a, b, args, c, kwargs)\n\nfunc(1, 2, 3, 4, x=100)",
+    "options": "[\"A. 1 2 (3, 4) 20 {'x': 100}\", \"B. 1 2 (3,) 20 {'x': 100, 'c': 20}\", \"C. \\u62a5\\u9519\", \"D. 1 2 (3, 4) 20 {'x': 100, 'c': 20}\"]",
+    "answer": "A",
+    "analysis": "位置参数1,2绑定a,b；剩余3,4被*args收集；c使用默认值20；x=100被**kwargs收集",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中函数参数定义的顺序正确的是？",
+    "options": "[\"A. **kwargs, *args, \\u9ed8\\u8ba4\\u53c2\\u6570, \\u5fc5\\u9700\\u53c2\\u6570\", \"B. \\u5fc5\\u9700\\u53c2\\u6570, \\u9ed8\\u8ba4\\u53c2\\u6570, *args, **kwargs\", \"C. \\u9ed8\\u8ba4\\u53c2\\u6570, \\u5fc5\\u9700\\u53c2\\u6570, *args, **kwargs\", \"D. \\u4efb\\u610f\\u987a\\u5e8f\"]",
+    "answer": "B",
+    "analysis": "正确顺序：必需参数 → 默认参数 → *args → keyword-only参数 → **kwargs",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "默认参数必须放在必需参数后面。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "Python语法要求默认参数跟在必需参数后面，否则会产生语法错误",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "函数中的*args和**kwargs可以同时使用。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "一个函数可以同时定义*args和**kwargs，分别收集多余的位置参数和关键字参数",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下哪个方法可以去除字符串首尾的空白字符？",
+    "options": "[\"A. trim()\", \"B. strip()\", \"C. remove()\", \"D. clear()\"]",
+    "answer": "B",
+    "analysis": "strip()去除首尾空白，lstrip()只去左边，rstrip()只去右边",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "字符串的split()和join()方法关系是？",
+    "options": "[\"A. \\u6ca1\\u6709\\u4efb\\u4f55\\u5173\\u7cfb\", \"B. split()\\u5206\\u5272\\u5b57\\u7b26\\u4e32\\uff0cjoin()\\u8fde\\u63a5\\u5b57\\u7b26\\u4e32\", \"C. \\u4e24\\u8005\\u529f\\u80fd\\u76f8\\u540c\", \"D. split()\\u7528\\u4e8e\\u8fde\\u63a5\\uff0cjoin()\\u7528\\u4e8e\\u5206\\u5272\"]",
+    "answer": "B",
+    "analysis": "' '.join(list)用空格连接列表元素为字符串，'a-b'.split('-')用横线分割字符串为列表",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\ns = 'hello world'\nprint(s[::2])",
+    "options": "[\"A. hlowrd\", \"B. hlo wrd\", \"C. ello\", \"D. hlool\"]",
+    "answer": "A",
+    "analysis": "s[::2]表示步长为2，从头到尾切片，得到h, l, o, ' ', w, r, d间隔取字符",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\ns = 'abcdef'\nprint(s[::-1])",
+    "options": "[\"A. abcdef\", \"B. fedcba\", \"C. f edcba\", \"D. \\u62a5\\u9519\"]",
+    "answer": "B",
+    "analysis": "[::-1]表示步长-1，从尾到头反转字符串",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "字符串是不可变类型，修改后会创建新字符串。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "字符串在创建后不能修改任何字符，任何'修改'操作都会返回新字符串",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "map()函数的返回值是什么类型？",
+    "options": "[\"A. \\u5217\\u8868\", \"B. \\u5143\\u7ec4\", \"C. \\u8fed\\u4ee3\\u5668\", \"D. \\u5b57\\u5178\"]",
+    "answer": "C",
+    "analysis": "map()返回一个迭代器惰性对象，需要用list()转换才能看到具体结果",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "filter()函数的作用是什么？",
+    "options": "[\"A. \\u5bf9\\u5e8f\\u5217\\u6bcf\\u4e2a\\u5143\\u7d20\\u6267\\u884c\\u64cd\\u4f5c\", \"B. \\u6839\\u636e\\u6761\\u4ef6\\u7b5b\\u9009\\u5143\\u7d20\", \"C. \\u6392\\u5e8f\\u5e8f\\u5217\", \"D. \\u53bb\\u91cd\\u5e8f\\u5217\"]",
+    "answer": "B",
+    "analysis": "filter(function, iterable)根据function的返回值筛选元素，返回True的保留",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\nnums = [3, 1, 4, 1, 5, 9, 2, 6]\nprint(sorted(nums, reverse=True))",
+    "options": "[\"A. [1, 1, 2, 3, 4, 5, 6, 9]\", \"B. [9, 6, 5, 4, 3, 2, 1, 1]\", \"C. [3, 1, 4, 1, 5, 9, 2, 6]\", \"D. \\u62a5\\u9519\"]",
+    "answer": "B",
+    "analysis": "sorted()返回新列表，reverse=True表示降序排列",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "enumerate()函数的返回值是什么？",
+    "options": "[\"A. \\u5217\\u8868\", \"B. \\u5143\\u7ec4\\u5217\\u8868\", \"C. \\u679a\\u4e3e\\u5bf9\\u8c61\\uff08\\u53ef\\u8fed\\u4ee3\\uff09\", \"D. \\u5b57\\u5178\"]",
+    "answer": "C",
+    "analysis": "enumerate(iterable)返回枚举对象，每个元素是(index, value)的元组",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "zip()函数可以将多个列表组合成元组列表。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "zip([1,2], ['a','b'])返回[(1,'a'), (2,'b')]，长度取最短列表",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "sorted()会修改原列表，list.sort()不修改原列表。",
+    "options": null,
+    "answer": "错误",
+    "analysis": "正好相反：sorted()返回新列表不修改原列表，list.sort()直接修改原列表返回None",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "使用with open读取文件的优点是？",
+    "options": "[\"A. \\u8bfb\\u53d6\\u901f\\u5ea6\\u66f4\\u5feb\", \"B. \\u53ef\\u4ee5\\u5904\\u7406\\u4e8c\\u8fdb\\u5236\\u6587\\u4ef6\", \"C. \\u81ea\\u52a8\\u5173\\u95ed\\u6587\\u4ef6\\uff0c\\u9632\\u6b62\\u8d44\\u6e90\\u6cc4\\u6f0f\", \"D. \\u53ef\\u4ee5\\u540c\\u65f6\\u8bfb\\u5199\"]",
+    "answer": "C",
+    "analysis": "with语句确保文件在代码块执行完毕后自动关闭，即使中间发生异常",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "读取整个文件内容到字符串，正确的方式是？",
+    "options": "[\"A. f.read(0)\", \"B. f.read()\", \"C. f.readline()\", \"D. f.readlines(-1)\"]",
+    "answer": "B",
+    "analysis": "read()读取全部内容；readline()读取一行；readlines()读取所有行到列表",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "'rb'模式和'r'模式的区别是？",
+    "options": "[\"A. 'rb'\\u8bfb\\u53d6\\u6587\\u672c\\uff0c'r'\\u8bfb\\u53d6\\u4e8c\\u8fdb\\u5236\", \"B. 'rb'\\u8bfb\\u53d6\\u4e8c\\u8fdb\\u5236\\uff0c'r'\\u8bfb\\u53d6\\u6587\\u672c\", \"C. \\u6ca1\\u6709\\u533a\\u522b\", \"D. 'rb'\\u66f4\\u5feb\"]",
+    "answer": "B",
+    "analysis": "'r'是文本模式（text），'rb'是二进制模式（binary），处理图片音频等非文本文件必须用二进制模式",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "写文件时如果不指定encoding参数，在Windows上默认使用GBK编码。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "Windows默认编码是GBK，跨平台开发时建议显式指定encoding='utf-8'",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "except Exception as e: 可以捕获哪些异常？",
+    "options": "[\"A. \\u6240\\u6709\\u5f02\\u5e38\", \"B. \\u6240\\u6709Exception\\u7684\\u5b50\\u7c7b\\u5f02\\u5e38\", \"C. \\u53ea\\u80fd\\u6355\\u83b7ValueError\", \"D. \\u53ea\\u80fd\\u6355\\u83b7TypeError\"]",
+    "answer": "B",
+    "analysis": "Exception是大多数内置异常的基类，能捕获大部分常见异常，但不包括SystemExit等",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "如何主动抛出一个异常？",
+    "options": "[\"A. throw Exception()\", \"B. raise Exception()\", \"C. cast Exception()\", \"D. thrownew Exception()\"]",
+    "answer": "B",
+    "analysis": "使用raise关键字抛出异常，如：raise ValueError('Invalid input')",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\ntry:\n    print('try')\nexcept:\n    print('except')\nelse:\n    print('else')\nfinally:\n    print('finally')",
+    "options": "[\"A. try except else finally\", \"B. try else finally\", \"C. try except finally\", \"D. try finally\"]",
+    "answer": "B",
+    "analysis": "try块无异常时执行else，finally无论有无异常都执行",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "一个try语句可以有多个except子句。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "可以定义多个except分别捕获不同类型的异常",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下关于实例方法和类方法的区别，说法正确的是？",
+    "options": "[\"A. \\u5b9e\\u4f8b\\u65b9\\u6cd5\\u4e0d\\u80fd\\u8bbf\\u95ee\\u7c7b\\u5c5e\\u6027\", \"B. \\u7c7b\\u65b9\\u6cd5\\u4e0d\\u9700\\u8981\\u5b9e\\u4f8b\\u5316\\u5373\\u53ef\\u8c03\\u7528\", \"C. \\u7c7b\\u65b9\\u6cd5\\u7b2c\\u4e00\\u4e2a\\u53c2\\u6570\\u662fself\", \"D. \\u5b9e\\u4f8b\\u65b9\\u6cd5\\u4e0d\\u9700\\u8981self\\u53c2\\u6570\"]",
+    "answer": "B",
+    "analysis": "类方法用@classmethod装饰，第一个参数是cls，可以通过类名直接调用，不需要实例化",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\nclass A:\n    def __init__(self, x):\n        self.x = x\n        \na = A(10)\nprint(hasattr(a, 'x'))",
+    "options": "[\"A. True\", \"B. False\", \"C. 10\", \"D. None\"]",
+    "answer": "A",
+    "analysis": "hasattr(obj, 'attr')检查对象是否有该属性，返回布尔值",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "什么是多继承时的菱形继承问题？",
+    "options": "[\"A. \\u7ee7\\u627f\\u94fe\\u8fc7\\u957f\\u5bfc\\u81f4\\u6027\\u80fd\\u95ee\\u9898\", \"B. \\u540c\\u4e00\\u4e2a\\u7c7b\\u88ab\\u591a\\u4e2a\\u8def\\u5f84\\u7ee7\\u627f\\uff0c\\u53ef\\u80fd\\u5bfc\\u81f4\\u91cd\\u590d\\u8c03\\u7528\", \"C. \\u5b50\\u7c7b\\u6570\\u91cf\\u8fc7\\u591a\", \"D. \\u7236\\u7c7b\\u65b9\\u6cd5\\u540d\\u51b2\\u7a81\"]",
+    "answer": "B",
+    "analysis": "菱形继承指A→B,C→A的结构，通过MRO和C3算法确保每个类只被调用一次",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "在子类中可以通过super().__init__()调用父类的初始化方法。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "super()返回父类代理，通过它调用父类方法确保正确初始化",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "Python中下划线开头的属性是私有的，完全不能被外部访问。",
+    "options": null,
+    "answer": "错误",
+    "analysis": "Python没有真正的私有属性，_xxx和__xxx只是命名约定，实际上仍可访问（只是__xxx会被名字改写）",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "LEGB规则指的是什么？",
+    "options": "[\"A. Local, Export, Global, Built-in\", \"B. Local, Enclosing, Global, Built-in\", \"C. Local, Extend, Global, Basic\", \"D. List, Export, Global, Built-in\"]",
+    "answer": "B",
+    "analysis": "LEGB是Python查找变量的顺序：Local(函数内) → Enclosing(闭包) → Global(模块) → Built-in(内置)",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\nx = 10\ndef func():\n    x = 20\n    print(x)\nfunc()\nprint(x)",
+    "options": "[\"A. 20 20\", \"B. 20 10\", \"C. 10 20\", \"D. 10 10\"]",
+    "answer": "B",
+    "analysis": "函数内的x=20创建了局部变量，不影响全局变量x，所以输出20和10",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "闭包可以访问外部函数的局部变量。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "闭包的核心特性就是内部函数可以引用外部函数的局部变量",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "lambda表达式和普通函数的区别是？",
+    "options": "[\"A. lambda\\u4e0d\\u80fd\\u6709\\u53c2\\u6570\", \"B. lambda\\u662f\\u5355\\u884c\\u533f\\u540d\\u51fd\\u6570\", \"C. lambda\\u6267\\u884c\\u66f4\\u5feb\", \"D. lambda\\u53ef\\u4ee5\\u591a\\u6761\\u8bed\\u53e5\"]",
+    "answer": "B",
+    "analysis": "lambda是匿名函数，只能写单行表达式，语法：lambda 参数: 表达式",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\nf = lambda x: x * 2 if x > 0 else -x\nprint(f(5))",
+    "options": "[\"A. 10\", \"B. -10\", \"C. 5\", \"D. -5\"]",
+    "answer": "A",
+    "analysis": "lambda x: x * 2 if x > 0 else -x 表示x>0时返回x*2，否则返回-x，5>0所以返回10",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "三元表达式 x if 条件 else y 的含义是？",
+    "options": "[\"A. \\u5982\\u679cx\\u5219\\u8fd4\\u56dex\\uff0c\\u5426\\u5219\\u8fd4\\u56dey\", \"B. \\u6761\\u4ef6\\u4e3aTrue\\u8fd4\\u56dex\\uff0c\\u5426\\u5219\\u8fd4\\u56dey\", \"C. \\u6761\\u4ef6\\u4e3aFalse\\u8fd4\\u56dex\", \"D. x\\u548cy\\u90fd\\u662fTrue\\u624d\\u8fd4\\u56deTrue\"]",
+    "answer": "B",
+    "analysis": "条件表达式/三元运算符：条件成立时整个表达式值为x，否则为y",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "列表推导式比普通for循环效率更高。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "列表推导式内部进行了优化，执行速度通常比普通循环更快",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "生成器表达式和列表推导式的语法完全相同。",
+    "options": null,
+    "answer": "错误",
+    "analysis": "生成器用圆括号：(x for x in range(5))，列表推导式用方括号：[x for x in range(5)]",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "random模块中，哪个函数可以打乱序列的顺序？",
+    "options": "[\"A. random.choice()\", \"B. random.shuffle()\", \"C. random.sample()\", \"D. random.randint()\"]",
+    "answer": "B",
+    "analysis": "shuffle()原地打乱序列，choice()随机选一个，sample()随机选多个，randint()生成随机整数",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "datetime模块中，如何获取当前时间？",
+    "options": "[\"A. datetime.now()\", \"B. datetime.today()\", \"C. datetime.current()\", \"D. date.now()\"]",
+    "answer": "B",
+    "analysis": "datetime.date.today()获取当前日期，datetime.datetime.now()获取当前日期时间",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "os.path.join()的作用是什么？",
+    "options": "[\"A. \\u521b\\u5efa\\u6587\\u4ef6\\u5939\", \"B. \\u62fc\\u63a5\\u8def\\u5f84\\uff0c\\u81ea\\u52a8\\u5904\\u7406\\u4e0d\\u540c\\u7cfb\\u7edf\\u7684\\u5206\\u9694\\u7b26\", \"C. \\u5206\\u5272\\u8def\\u5f84\", \"D. \\u5224\\u65ad\\u8def\\u5f84\\u662f\\u5426\\u5b58\\u5728\"]",
+    "answer": "B",
+    "analysis": "join()智能拼接路径，如os.path.join('a', 'b', 'c')在不同系统输出正确的路径格式",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "re模块中，'.'默认匹配所有字符包括换行符。",
+    "options": null,
+    "answer": "错误",
+    "analysis": "'.'默认匹配除换行符外的任意字符，需要re.DOTALL或re.S标志才能匹配换行符",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\nL = [1, 2, 3, 4, 5]\nprint(L[-3:])",
+    "options": "[\"A. [1, 2, 3]\", \"B. [3, 4, 5]\", \"C. [1, 2]\", \"D. [4, 5]\"]",
+    "answer": "B",
+    "analysis": "负索引从后往前数，-3表示倒数第三个元素，切片L[-3:]获取从倒数第三个到末尾",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\nd = {1: 'a', 2: 'b', 3: 'c'}\nfor i, v in enumerate(d):\n    print(i, v, end=' ')\n",
+    "options": "[\"A. 1 a 2 b 3 c\", \"B. 0 1 1 2 2 3\", \"C. 1 1 2 2 3 3\", \"D. 0 a 1 b 2 c\"]",
+    "answer": "B",
+    "analysis": "enumerate枚举字典时遍历的是key，i是索引从0开始，v是key值",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\ns = 'hello'\nprint(s.find('ll'))\nprint(s.find('x'))",
+    "options": "[\"A. 2 2\", \"B. 2 -1\", \"C. 3 -1\", \"D. 3 3\"]",
+    "answer": "B",
+    "analysis": "find()返回子串首次出现的索引，不存在返回-1",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下代码输出什么？\nclass A:\n    x = 1\na = A()\nprint(type(a) == A)\nprint(isinstance(a, A))",
+    "options": "[\"A. True True\", \"B. False False\", \"C. True False\", \"D. False True\"]",
+    "answer": "A",
+    "analysis": "type()和isinstance()都可以判断对象类型，前者严格匹配，后者考虑继承关系",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "一个类可以同时继承多个父类。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "Python支持多继承，如 class C(A, B)，但需要注意MRO顺序",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "字典的键必须是不可变类型。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "字典的键必须是可哈希的（不可变），值可以是任意类型",
+    "difficulty": 3
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中使用什么符号表示单行注释？",
+    "options": "[\"A. //\", \"B. #\", \"C. /*\", \"D. --\"]",
+    "answer": "B",
+    "analysis": "Python中单行注释以#开头，多行注释用三引号",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下哪个是Python的输出语句？",
+    "options": "[\"A. console.log()\", \"B. print()\", \"C. echo()\", \"D. printf()\"]",
+    "answer": "B",
+    "analysis": "Python使用print()函数输出内容",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python是一种什么类型的编程语言？",
+    "options": "[\"A. \\u7f16\\u8bd1\\u578b\\u8bed\\u8a00\", \"B. \\u89e3\\u91ca\\u578b\\u8bed\\u8a00\", \"C. \\u6c47\\u7f16\\u8bed\\u8a00\", \"D. \\u673a\\u5668\\u8bed\\u8a00\"]",
+    "answer": "B",
+    "analysis": "Python是解释型语言，代码逐行解释执行",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "Python代码必须以缩进来表示代码块。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "Python使用缩进来表示代码块结构",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下哪个是Python的整数类型？",
+    "options": "[\"A. int\", \"B. integer\", \"C. long\", \"D. number\"]",
+    "answer": "A",
+    "analysis": "Python中整数类型是int，没有long等区分",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "如何创建一个包含数字1、2、3的列表？",
+    "options": "[\"A. (1, 2, 3)\", \"B. {1, 2, 3}\", \"C. [1, 2, 3]\", \"D. <1, 2, 3>\"]",
+    "answer": "C",
+    "analysis": "列表用方括号，元组用圆括号，集合用花括号",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中如何表示布尔值？",
+    "options": "[\"A. true/false\", \"B. True/False\", \"C. TRUE/FALSE\", \"D. 1/0\"]",
+    "answer": "B",
+    "analysis": "Python的布尔值首字母大写：True和False",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "type(3.14)返回的结果是什么？",
+    "options": "[\"A. <class 'int'>\", \"B. <class 'float'>\", \"C. <class 'double'>\", \"D. <class 'number'>\"]",
+    "answer": "B",
+    "analysis": "Python中浮点数类型是float",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "Python中可以使用单引号或双引号表示字符串。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "'hello'和\"hello\"都可以表示字符串",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中如何给变量a赋值5？",
+    "options": "[\"A. a = 5\", \"B. int a = 5\", \"C. a := 5\", \"D. let a = 5\"]",
+    "answer": "A",
+    "analysis": "Python变量赋值不需要声明类型，直接使用=赋值",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中5 // 2的结果是多少？",
+    "options": "[\"A. 2.5\", \"B. 2\", \"C. 3\", \"D. 2.0\"]",
+    "answer": "B",
+    "analysis": "//是整数除法运算符，结果取整数部分",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中5 % 2的结果是多少？",
+    "options": "[\"A. 2\", \"B. 1\", \"C. 2.5\", \"D. 0\"]",
+    "answer": "B",
+    "analysis": "%是取模运算符，5除以2余1",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "以下哪个运算符表示不等于？",
+    "options": "[\"A. =/\", \"B. !=\", \"C. <>\", \"D. not=\"]",
+    "answer": "B",
+    "analysis": "Python中!=表示不等于，==表示等于",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "Python中and表示逻辑与，or表示逻辑或。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "Python使用单词作为逻辑运算符",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中if语句的基本语法结构是？",
+    "options": "[\"A. if \\u6761\\u4ef6 { \\u8bed\\u53e5 }\", \"B. if (\\u6761\\u4ef6) { \\u8bed\\u53e5 }\", \"C. if \\u6761\\u4ef6: \\u8bed\\u53e5\", \"D. if \\u6761\\u4ef6 then \\u8bed\\u53e5\"]",
+    "answer": "C",
+    "analysis": "Python的if语句以冒号结尾，通过缩进来区分代码块",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中elif表示什么？",
+    "options": "[\"A. \\u5982\\u679cif\\u6761\\u4ef6\\u4e0d\\u6210\\u7acb\\u5219\\u6267\\u884c\", \"B. \\u5426\\u5219\\u5982\\u679c\", \"C. \\u7ed3\\u675f\\u5224\\u65ad\", \"D. \\u5faa\\u73af\"]",
+    "answer": "B",
+    "analysis": "elif是else if的缩写，用于多重条件判断",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "if语句后面必须跟else子句。",
+    "options": null,
+    "answer": "错误",
+    "analysis": "else不是必须的，if可以单独使用",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中for循环遍历列表的正确写法是？",
+    "options": "[\"A. for i in range(list):\", \"B. for i in list:\", \"C. for (i : list):\", \"D. foreach i in list:\"]",
+    "answer": "B",
+    "analysis": "Python的for循环直接用for i in list遍历",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "range(5)会生成什么序列？",
+    "options": "[\"A. [0,1,2,3,4,5]\", \"B. [0,1,2,3,4]\", \"C. [1,2,3,4,5]\", \"D. [5]\"]",
+    "answer": "B",
+    "analysis": "range(5)生成0到4的整数序列，不包括结束值",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中break语句的作用是？",
+    "options": "[\"A. \\u8df3\\u8fc7\\u672c\\u6b21\\u5faa\\u73af\", \"B. \\u7ed3\\u675f\\u6574\\u4e2a\\u5faa\\u73af\", \"C. \\u7ee7\\u7eed\\u6267\\u884c\", \"D. \\u9000\\u51fa\\u7a0b\\u5e8f\"]",
+    "answer": "B",
+    "analysis": "break用于立即终止当前循环",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中continue语句的作用是？",
+    "options": "[\"A. \\u7ed3\\u675f\\u6574\\u4e2a\\u5faa\\u73af\", \"B. \\u8df3\\u8fc7\\u672c\\u6b21\\u5faa\\u73af\\uff0c\\u7ee7\\u7eed\\u4e0b\\u6b21\", \"C. \\u9000\\u51fa\\u7a0b\\u5e8f\", \"D. \\u6682\\u505c\\u5faa\\u73af\"]",
+    "answer": "B",
+    "analysis": "continue跳过本次循环剩余语句",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "while循环需要一个计数器来避免无限循环。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "while循环需要手动控制循环条件",
+    "difficulty": 1
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "如何获取字符串'hello'的长度？",
+    "options": "[\"A. len('hello')\", \"B. 'hello'.length()\", \"C. length('hello')\", \"D. 'hello'.size()\"]",
+    "answer": "A",
+    "analysis": "使用len()函数获取长度",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "字符串'hello'的索引[0]和[-1]分别是什么？",
+    "options": "[\"A. 'h'\\u548c'o'\", \"B. 'e'\\u548c'l'\", \"C. 'h'\\u548c'l'\", \"D. 'o'\\u548c'h'\"]",
+    "answer": "A",
+    "analysis": "[0]获取第一个字符，[-1]获取最后一个字符",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "'hello' + 'world'的结果是什么？",
+    "options": "[\"A. 'helloworld'\", \"B. 'hello world'\", \"C. 'hello+world'\", \"D. \\u62a5\\u9519\"]",
+    "answer": "A",
+    "analysis": "字符串可以用+号拼接",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "'hello' * 3的结果是什么？",
+    "options": "[\"A. 'hello3'\", \"B. 'hellohellohello'\", \"C. 'hello hello hello'\", \"D. \\u62a5\\u9519\"]",
+    "answer": "B",
+    "analysis": "字符串可以用*号重复指定次数",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "如何将字符串转为大写？",
+    "options": "[\"A. 'hello'.toUpperCase()\", \"B. 'hello'.upper()\", \"C. upper('hello')\", \"D. 'hello'.uppercase()\"]",
+    "answer": "B",
+    "analysis": "upper()方法将字符串转为大写",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "'hello world'.title()的结果是什么？",
+    "options": "[\"A. 'HELLO WORLD'\", \"B. 'hello world'\", \"C. 'Hello World'\", \"D. 'Hello world'\"]",
+    "answer": "C",
+    "analysis": "title()方法将每个单词的首字母大写",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "'hello'.replace('l', 'x')的结果是什么？",
+    "options": "[\"A. 'hexlo'\", \"B. 'hexxo'\", \"C. 'hello'\", \"D. 'hxllo'\"]",
+    "answer": "B",
+    "analysis": "replace()替换所有匹配字符",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "字符串是不可变的，不能直接修改字符串中的某个字符。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "字符串创建后不能修改任何字符",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "list.append(x)方法的作用是？",
+    "options": "[\"A. \\u5728\\u6307\\u5b9a\\u4f4d\\u7f6e\\u63d2\\u5165\", \"B. \\u5728\\u672b\\u5c3e\\u6dfb\\u52a0\\u5143\\u7d20\", \"C. \\u5220\\u9664\\u5143\\u7d20\", \"D. \\u6e05\\u7a7a\\u5217\\u8868\"]",
+    "answer": "B",
+    "analysis": "append()在列表末尾添加一个元素",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "list.pop()方法的作用是？",
+    "options": "[\"A. \\u5728\\u672b\\u5c3e\\u6dfb\\u52a0\\u5143\\u7d20\", \"B. \\u5220\\u9664\\u5e76\\u8fd4\\u56de\\u6700\\u540e\\u4e00\\u4e2a\\u5143\\u7d20\", \"C. \\u6e05\\u7a7a\\u5217\\u8868\", \"D. \\u6392\\u5e8f\\u5217\\u8868\"]",
+    "answer": "B",
+    "analysis": "pop()删除并返回最后一个元素",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "list.remove(x)方法的作用是？",
+    "options": "[\"A. \\u5220\\u9664\\u6240\\u6709x\", \"B. \\u5220\\u9664\\u7b2c\\u4e00\\u4e2ax\", \"C. \\u8fd4\\u56dex\", \"D. \\u7edf\\u8ba1x\\u7684\\u4e2a\\u6570\"]",
+    "answer": "B",
+    "analysis": "remove()删除第一个匹配的元素",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "nums = [3, 1, 4, 1, 5]执行nums.count(1)的结果是？",
+    "options": "[\"A. 1\", \"B. 2\", \"C. 3\", \"D. 4\"]",
+    "answer": "B",
+    "analysis": "count()统计指定元素出现的次数",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "如何升序排列列表[3,1,2]？",
+    "options": "[\"A. sort()\", \"B. reverse()\", \"C. order()\", \"D. sorted()\"]",
+    "answer": "A",
+    "analysis": "list.sort()原地排序",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "列表是有序且可变的序列。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "列表的元素有顺序索引，可以随时增删改",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "如何创建一个包含name键的字典？",
+    "options": "[\"A. dict = ('name': 'Tom')\", \"B. dict = ['name': 'Tom']\", \"C. dict = {'name': 'Tom'}\", \"D. dict = <name: Tom>\"]",
+    "answer": "C",
+    "analysis": "字典使用花括号，键值对用冒号分隔",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "如何访问字典dict['name']？",
+    "options": "[\"A. \\u8bbf\\u95ee\\u503c\", \"B. \\u8bbf\\u95ee\\u952e\", \"C. \\u5220\\u9664\\u952e\\u503c\\u5bf9\", \"D. \\u66f4\\u65b0\\u503c\"]",
+    "answer": "A",
+    "analysis": "用键名可以访问对应的值",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "如何向字典添加新的键值对？",
+    "options": "[\"A. dict.add(key, value)\", \"B. dict.append(key, value)\", \"C. dict[key] = value\", \"D. dict.push(key, value)\"]",
+    "answer": "C",
+    "analysis": "直接用dict[key] = value赋值",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "字典的哪个方法返回所有键？",
+    "options": "[\"A. dict.values()\", \"B. dict.keys()\", \"C. dict.items()\", \"D. dict.get()\"]",
+    "answer": "B",
+    "analysis": "keys()返回所有键，values()返回所有值",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "字典的键必须是唯一的，值可以重复。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "字典的键唯一，值可以重复",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "定义函数的正确语法是？",
+    "options": "[\"A. function myFunc():\", \"B. def myFunc():\", \"C. func myFunc():\", \"D. define myFunc()\"]",
+    "answer": "B",
+    "analysis": "Python使用def关键字定义函数",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "函数中return语句的作用是？",
+    "options": "[\"A. \\u7ed3\\u675f\\u51fd\\u6570\", \"B. \\u8fd4\\u56de\\u503c\\u5e76\\u7ed3\\u675f\\u51fd\\u6570\", \"C. \\u6682\\u505c\\u51fd\\u6570\", \"D. \\u6253\\u5370\\u503c\"]",
+    "answer": "B",
+    "analysis": "return返回计算结果并结束函数",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "函数的默认参数应该怎么写？",
+    "options": "[\"A. def func(a = 5):\", \"B. def func(a: 5):\", \"C. def func(int a = 5):\", \"D. def func(a default 5):\"]",
+    "answer": "A",
+    "analysis": "Python函数默认参数语法：def func(a=5):",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "Python函数可以返回多个值。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "Python函数可以用return a, b返回多个值，实际返回元组",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "Python中定义类的关键字是？",
+    "options": "[\"A. struct\", \"B. class\", \"C. interface\", \"D. type\"]",
+    "answer": "B",
+    "analysis": "Python使用class关键字定义类",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "创建类对象的语法是？",
+    "options": "[\"A. new MyClass()\", \"B. MyClass()\", \"C. create MyClass()\", \"D. MyClass.new()\"]",
+    "answer": "B",
+    "analysis": "Python直接用类名加括号创建对象",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "__init__方法在什么时候被调用？",
+    "options": "[\"A. \\u7c7b\\u5b9a\\u4e49\\u65f6\", \"B. \\u5bf9\\u8c61\\u521b\\u5efa\\u65f6\", \"C. \\u5bf9\\u8c61\\u9500\\u6bc1\\u65f6\", \"D. \\u968f\\u65f6\"]",
+    "answer": "B",
+    "analysis": "__init__是初始化方法，在创建对象时自动调用",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "self在类方法中代表什么？",
+    "options": "[\"A. \\u7c7b\\u672c\\u8eab\", \"B. \\u5f53\\u524d\\u5bf9\\u8c61\", \"C. \\u7236\\u7c7b\", \"D. \\u6a21\\u5757\"]",
+    "answer": "B",
+    "analysis": "self代表当前对象",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "类属性是所有对象共享的，实例属性是每个对象独有的。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "类属性所有对象共享，实例属性互不影响",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "打开文件进行读取的正确方式是？",
+    "options": "[\"A. open('file.txt', 'r')\", \"B. open('file.txt', 'read')\", \"C. open('file.txt', 'w')\", \"D. open('file.txt')\"]",
+    "answer": "A",
+    "analysis": "open()第二个参数指定模式，'r'表示读取",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "文件读取的三种方法区别是？",
+    "options": "[\"A. read()\\u8bfb\\u5168\\u90e8\\uff0creadline()\\u8bfb\\u4e00\\u884c\\uff0creadlines()\\u8bfb\\u6240\\u6709\\u884c\", \"B. \\u6ca1\\u6709\\u4efb\\u4f55\\u533a\\u522b\", \"C. read()\\u8bfb\\u4e00\\u884c\\uff0creadline()\\u8bfb\\u5168\\u90e8\", \"D. read()\\u8bfb\\u5b57\\u8282\\uff0creadline()\\u8bfb\\u5b57\\u7b26\"]",
+    "answer": "A",
+    "analysis": "read()读取全部，readline()逐行，readlines()返回行列表",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "打开文件后应该关闭文件以释放资源。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "使用完文件后应关闭，或使用with语句自动关闭",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "导入模块的正确方式是？",
+    "options": "[\"A. import 'module'\", \"B. import module\", \"C. #include module\", \"D. using module\"]",
+    "answer": "B",
+    "analysis": "Python使用import关键字导入模块",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "from module import func的作用是？",
+    "options": "[\"A. \\u5bfc\\u5165\\u6574\\u4e2a\\u6a21\\u5757\", \"B. \\u4ece\\u6a21\\u5757\\u5bfc\\u5165\\u7279\\u5b9a\\u51fd\\u6570\", \"C. \\u521b\\u5efa\\u6a21\\u5757\", \"D. \\u5220\\u9664\\u6a21\\u5757\"]",
+    "answer": "B",
+    "analysis": "from...import可以只导入模块中的特定成员",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "math模块中向上取整的函数是？",
+    "options": "[\"A. math.floor()\", \"B. math.ceil()\", \"C. math.round()\", \"D. math.abs()\"]",
+    "answer": "B",
+    "analysis": "ceil()向上取整，floor()向下取整",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "可以使用别名导入模块，如 import os as operating_system。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "可以用as给模块或函数起别名",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "集合（set）的主要特点是？",
+    "options": "[\"A. \\u6709\\u5e8f\\u4e0d\\u91cd\\u590d\", \"B. \\u65e0\\u5e8f\\u4e0d\\u91cd\\u590d\", \"C. \\u6709\\u5e8f\\u53ef\\u91cd\\u590d\", \"D. \\u65e0\\u5e8f\\u53ef\\u91cd\\u590d\"]",
+    "answer": "B",
+    "analysis": "集合是无序的，且元素唯一不重复",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "如何创建空列表、空字典、空元组？",
+    "options": "[\"A. [] / {} / ()\", \"B. list() / dict() / tuple()\", \"C. \\u4e24\\u8005\\u90fd\\u53ef\\u4ee5\", \"D. \\u4ee5\\u4e0a\\u90fd\\u4e0d\\u5bf9\"]",
+    "answer": "C",
+    "analysis": "[]和list()都可以创建空列表，{}创建字典",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "元组可以转换为列表，列表也可以转换为元组。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "使用tuple()和list()函数可以互相转换",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "f-string格式化字符串的正确写法是？",
+    "options": "[\"A. 'Hello {name}'.format(name='Tom')\", \"B. f'Hello {name}'\", \"C. 'Hello %s' % name\", \"D. \\u4ee5\\u4e0a\\u90fd\\u662f\"]",
+    "answer": "D",
+    "analysis": "Python有三种格式化方式，效果相同",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "single",
+    "content": "'Hello {}'.format('World')的结果是？",
+    "options": "[\"A. 'Hello World'\", \"B. 'Hello {}'\", \"C. 'World Hello'\", \"D. \\u62a5\\u9519\"]",
+    "answer": "A",
+    "analysis": "format()方法用传入的值替换占位符{}",
+    "difficulty": 2
+  },
+  {
+    "category": "Python",
+    "type": "judge",
+    "content": "f-string中可以直接写变量名或表达式。",
+    "options": null,
+    "answer": "正确",
+    "analysis": "f'x + y = {x + y}'可以计算并插入结果",
+    "difficulty": 2
+  }
+]

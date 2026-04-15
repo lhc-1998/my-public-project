@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考试记录 - 在线考试系统</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 在线考试系统</h1>
+            <nav>
+                <a href="/exam">开始考试</a>
+                <a href="/history">考试记录</a>
+                <a href="/questions" id="qLink" style="display:none;">题库管理</a>
+                <a href="/admin" id="adminLink" style="display:none;">管理后台</a>
+                <button onclick="logout()" class="btn btn-outline">退出</button>
+            </nav>
+        </header>
+
+        <main>
+            <h2>考试记录</h2>
+            <div id="historyList" class="history-grid"></div>
+        </main>
+    </div>
+
+    <script>
+        function getToken() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = '/login';
+                return null;
+            }
+            return token;
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = '/';
+        }
+
+        async function loadHistory() {
+            const token = getToken();
+
+            try {
+                const res = await fetch('/api/exam/history/list', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (!res.ok) {
+                    alert('加载失败');
+                    return;
+                }
+
+                const exams = await res.json();
+                renderHistory(exams);
+            } catch (e) {
+                alert('网络错误');
+            }
+        }
+
+        function renderHistory(exams) {
+            const container = document.getElementById('historyList');
+
+            if (exams.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <p>暂无考试记录</p>
+                        <a href="/exam" class="btn btn-primary">开始考试</a>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = exams.map(exam => {
+                const percentage = exam.total_score > 0 ? Math.round((exam.score / exam.total_score) * 100) : 0;
+                const statusClass = exam.status === 'graded' ? 
+                    (percentage >= 60 ? 'pass' : 'fail') : 'pending';
+
+                return `
+                    <div class="history-card">
+                        <div class="history-header">
+                            <h3>${exam.title}</h3>
+                            <span class="category-tag">${exam.category === 'all' ? '综合' : exam.category}</span>
+                        </div>
+                        <div class="history-body">
+                            <div class="score-display ${statusClass}">
+                                <span class="score">${exam.score}</span>
+                                <span class="total">/ ${exam.total_score}</span>
+                            </div>
+                            <div class="history-info">
+                                <p>得分率：${percentage}%</p>
+                                <p>时间：${new Date(exam.created_at).toLocaleString()}</p>
+                            </div>
+                        </div>
+                        <div class="history-footer">
+                            <span class="status-badge ${statusClass}">${exam.status}</span>
+                            ${exam.status === 'graded' ? 
+                                `<a href="/exam/${exam.id}" class="btn btn-sm">查看详情</a>` : 
+                                `<a href="/exam/${exam.id}" class="btn btn-sm btn-primary">继续答题</a>`
+                            }
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        loadHistory();
+        checkRole();
+
+        function checkRole() {
+            const userStr = localStorage.getItem('user');
+            if (userStr) {
+                const user = JSON.parse(userStr);
+                if (user.role === 'teacher' || user.role === 'admin') {
+                    document.getElementById('qLink').style.display = '';
+                }
+                if (user.role === 'admin') {
+                    document.getElementById('adminLink').style.display = '';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
