@@ -5,5 +5,5 @@ echo ========================================
 echo    在线考试系统启动中...
 echo ========================================
 echo.
-python -m uvicorn main:app --host 0.0.0.0 --port 8000
+python -m uvicorn main:app --host 0.0.0.0 --port 8015
 pause

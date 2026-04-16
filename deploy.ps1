@@ -49,8 +49,8 @@ Write-Host "`n[6/6] 启动应用..." -ForegroundColor Yellow
 Write-Host "`n========================================" -ForegroundColor Green
 Write-Host "部署完成！" -ForegroundColor Green
 Write-Host "========================================" -ForegroundColor Green
-Write-Host "`n请确保腾讯云安全组已开放 8000 端口" -ForegroundColor Cyan
+Write-Host "`n请确保腾讯云安全组已开放 8015 端口" -ForegroundColor Cyan
 Write-Host "然后运行以下命令启动服务:" -ForegroundColor Cyan
-Write-Host "  python -m uvicorn main:app --host 0.0.0.0 --port 8000" -ForegroundColor Green
-Write-Host "`n访问地址: http://43.129.21.157:8000" -ForegroundColor Green
-Write-Host "API文档:   http://43.129.21.157:8000/docs" -ForegroundColor Green
+Write-Host "  python -m uvicorn main:app --host 0.0.0.0 --port 8015" -ForegroundColor Green
+Write-Host "`n访问地址: http://43.129.21.157:8015" -ForegroundColor Green
+Write-Host "API文档:   http://43.129.21.157:8015/docs" -ForegroundColor Green
