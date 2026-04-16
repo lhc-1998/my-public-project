@@ -153,12 +153,12 @@
                         // 字母格式：直接解析
                         correctLetters = answerCleaned.split(',').map(a => a.trim().toUpperCase());
                     } else {
-                        // 文本格式：匹配选项文本，找到对应的字母
+                        // 文本格式：精确匹配选项文本，找到对应的字母
                         const answerLower = answerCleaned.toLowerCase();
                         options.forEach((opt, idx) => {
                             const optText = opt.replace(/^[A-F]\.\s*/, '').toLowerCase();
-                            // 精确匹配或包含匹配
-                            if (optText === answerLower || optText.includes(answerLower) || answerLower.includes(optText)) {
+                            // 精确匹配（完全相等才标记为正确答案）
+                            if (optText === answerLower) {
                                 const letter = letterMap[idx] || String.fromCharCode(65 + idx);
                                 correctLetters.push(letter);
                             }

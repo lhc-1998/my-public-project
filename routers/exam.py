@@ -79,8 +79,8 @@ def grade_answer(question: Question, user_answer: str, options: str = None) -> t
                                     opt_letter = letter_map.get(i, chr(65+i))
                                     opt_text = opt.lower()
                                 
-                                # 检查这个选项是否匹配正确答案
-                                if opt_text == correct_lower or correct_lower in opt_text or opt_text in correct_lower:
+                                # 检查这个选项是否匹配正确答案（精确匹配）
+                                if opt_text == correct_lower:
                                     answer_letter = opt_letter
                                     break
                     except Exception as e:
